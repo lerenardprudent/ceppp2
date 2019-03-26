@@ -143,6 +143,29 @@ class Patients_Hook {
     }
   }
   
+  function initiate_patient_preferences($bean, $event, $arguments) {
+    $db = DBManagerFactory::getInstance();
+    $code = $bean->code_ident;
+    $uname = $this->quote($code);
+    
+    if ( $bean->module_name == "pat_Patients") {
+      $query = "SELECT * FROM Users WHERE user_name = $uname";
+      $patUserId = $db->getOne($query);
+      if ( !empty($patUserId) ) {
+        $patUserId = $this->quote($patUserId);
+        $id = $this->quote($this->gen_uuid());
+        $now = "NOW()";
+        $false = $this->quote(0);
+        $categ = $this->quote("global");
+        $contents = $this->quote(base64_encode('a:4:{s:10:"user_theme";s:6:"SuiteP";s:19:"theme_current_group";s:3:"All";s:8:"timezone";s:16:"America/New_York";s:2:"ut";i:1;}'));
+        $query = "INSERT INTO user_preferences(id, category, deleted, date_entered, date_modified, assigned_user_id, contents) ";
+        $query .= " VALUES ($id, $categ, $false, $now, $now, $patUserId, $contents)";
+        $res = $db->query($query);
+        $foo = 1;
+      }
+    }
+  }
+  
   function gen_uuid() {
     return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
         // 32 bits for "time_low"

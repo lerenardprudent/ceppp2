@@ -13,6 +13,7 @@ $hook_array['after_save'] = Array();
 $hook_array['after_save'][] = Array(1, 'Create Patient user', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'create_patient_access'); 
 $hook_array['after_save'][] = Array(2, 'Assign role and sec group to Patient user', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'assign_patient_access_rights'); 
 $hook_array['after_save'][] = Array(3, 'Create PerspectivePatient', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'create_patient_perspective'); 
+$hook_array['after_save'][] = Array(4, 'Initiate Preferences', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'initiate_patient_preferences'); 
 
 $hook_array['after_login'] = Array(); 
 $hook_array['after_login'][] = Array(1, 'Home Redirect', 'modules/pat_PerspectivePatient/PerspectivePatient_Hooks.php','PerspectivePatient_Hooks', 'homeRedirect');
