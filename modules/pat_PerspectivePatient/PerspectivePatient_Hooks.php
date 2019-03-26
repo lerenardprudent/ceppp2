@@ -16,6 +16,7 @@ class PerspectivePatient_Hooks {
         if ( $recordId ) {
           $redirectUrl = "index.php?action=ajaxui#ajaxUILoc=" . urlencode("index.php?module=$perspModuleName&return_module=$perspModuleName&action=EditView&record=$recordId");
           SugarApplication::redirect($redirectUrl);
+          $GLOBALS['log']->debug("Redirecting: $redirectUrl");
         }
       }
     }
