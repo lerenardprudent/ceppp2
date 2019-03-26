@@ -11,7 +11,7 @@ class PerspectivePatient_Hooks {
       if ( count($roles) == 1 && $roles[0] == "Patient" ) {
         $perspModuleName = "pat_PerspectivePatient";
         $userId = $current_user->id;
-        $query = "SELECT * FROM $perspModuleName WHERE assigned_user_id = \"$userId\"";
+        $query = "SELECT * FROM ". strtolower($perspModuleName) . " WHERE assigned_user_id = \"$userId\"";
         $recordId = $db->getOne($query);
         if ( $recordId ) {
           $redirectUrl = "index.php?action=ajaxui#ajaxUILoc=" . urlencode("index.php?module=$perspModuleName&return_module=$perspModuleName&action=EditView&record=$recordId");
