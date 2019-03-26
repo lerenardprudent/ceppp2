@@ -161,6 +161,7 @@ class Patients_Hook {
         $query = "INSERT INTO user_preferences(id, category, deleted, date_entered, date_modified, assigned_user_id, contents) ";
         $query .= " VALUES ($id, $categ, $false, $now, $now, $patUserId, $contents)";
         $res = $db->query($query);
+        $GLOBALS['log']->debug("Init pref: ". $res ? "OK" : "FAILED");
         $foo = 1;
       }
     }
