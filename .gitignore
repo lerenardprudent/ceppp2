@@ -1,0 +1,9 @@
+/nbproject/private/
+/cache/
+/nbproject/private/
+/cache/*/*
+/config.php
+/upload/
+/vendor/*/*
+/**/*.log
+/vendor/

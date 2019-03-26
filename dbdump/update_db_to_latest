@@ -1,0 +1,11 @@
+#! /bin/sh
+
+CONFIG=../config.php
+DBDUMP_DIR=.
+read DBNAME DBUSER DBPWD <<< $(echo "$(cat $CONFIG)echo \$sugar_config['dbconfig']['db_name'].\" \".\$sugar_config['dbconfig']['db_user_name'].\" \".\$sugar_config['dbconfig']['db_password'] ;" | php)
+LATEST_DBDUMP_CMD="for filename in "\`"ls -r $DBDUMP_DIR"\`"; do if [[ "\$"filename =~ \.sql$ ]]; then echo "\$"filename; break; fi; done"
+LATEST_DBDUMP_FILENAME=$(eval $LATEST_DBDUMP_CMD)
+MYSQL_BASE_CMD="mysql -u $DBUSER" && [ ! -z $DBPWD ] && MYSQL_BASE_CMD="$MYSQL_BASE_CMD -p\"$DBPWD\""
+MYSQL_WIPEDB_CMD="$MYSQL_BASE_CMD -e 'DROP DATABASE $DBNAME; CREATE DATABASE $DBNAME'"
+MYSQL_UPDATEDB_CMD="$MYSQL_BASE_CMD $DBNAME < $LATEST_DBDUMP_FILENAME"
+echo "$MYSQL_WIPEDB_CMD && $MYSQL_UPDATEDB_CMD"

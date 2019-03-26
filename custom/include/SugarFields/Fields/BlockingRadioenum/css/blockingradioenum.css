@@ -1,0 +1,16 @@
+div[type="BlockingRadioenum"] > br {
+  display: none; }
+
+.panel-heading.blocked {
+  background-color: red;
+}
+
+.panel-heading.blocked > a {
+  display: none;
+}
+
+.panel-heading.blocked > div.temp-label {
+  background-color: red;
+  display: inline-block;
+  margin: 5px;
+}
