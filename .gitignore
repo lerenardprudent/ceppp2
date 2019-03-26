@@ -1,6 +1,4 @@
-/nbproject/private/
-/cache/
-/nbproject/private/
+/nbproject/*/*
 /cache/*/*
 /config.php
 /upload/
