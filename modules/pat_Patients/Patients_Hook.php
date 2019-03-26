@@ -77,7 +77,7 @@ class Patients_Hook {
       $false = $this->quote(0);
       $now = "NOW()";
 
-      $query = "SELECT * FROM Users WHERE user_name = $uname";
+      $query = "SELECT * FROM users WHERE user_name = $uname";
       $patUserId = $db->getOne($query);
       if ( !empty($patUserId) ) {
         $patUserId = $this->quote($patUserId);
@@ -124,7 +124,7 @@ class Patients_Hook {
       $false = $this->quote(0);
       $now = "NOW()";
 
-      $query = "SELECT * FROM Users WHERE user_name = $uname";
+      $query = "SELECT * FROM users WHERE user_name = $uname";
       $patUserId = $db->getOne($query);
       if ( !empty($patUserId) ) {
         $patUserId = $this->quote($patUserId);
@@ -149,7 +149,7 @@ class Patients_Hook {
     $uname = $this->quote($code);
     
     if ( $bean->module_name == "pat_Patients") {
-      $query = "SELECT * FROM Users WHERE user_name = $uname";
+      $query = "SELECT * FROM users WHERE user_name = $uname";
       $patUserId = $db->getOne($query);
       if ( !empty($patUserId) ) {
         $patUserId = $this->quote($patUserId);
