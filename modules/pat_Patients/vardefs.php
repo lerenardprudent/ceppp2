@@ -496,7 +496,8 @@ $dictionary['pat_Patients'] = array(
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
-    'help' => 'Pouvez-vous me parler de votre expérience avec votre maladie? (à remplir avec info de l\'entrevue)',
+    'help' => 'Pouvez-vous décrire votre expérience avec la maladie?',
+    'help_en' => 'Could you describe your experience with your illness?',
     'importable' => 'true',
     'duplicate_merge' => 'disabled',
     'duplicate_merge_dom_value' => '0',
@@ -521,7 +522,8 @@ $dictionary['pat_Patients'] = array(
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
-    'help' => 'Dans quelle spécialité de soins le pp a-t-il le plus d\'expérience ?',
+    'help' => 'Dans quelle spécialité de soins avez-vous le plus d\'expérience ?',
+    'help_en' => 'In which healthcare specialty does the patient have most experience?',
     'importable' => 'true',
     'duplicate_merge' => 'disabled',
     'duplicate_merge_dom_value' => '0',
@@ -2038,6 +2040,7 @@ $dictionary['pat_Patients'] = array(
     'no_default' => false,
     'comments' => '',
     'help' => 'Quel était votre rôle ?',
+    'help_en' => 'What was your role?',
     'importable' => 'true',
     'duplicate_merge' => 'disabled',
     'duplicate_merge_dom_value' => '0',
@@ -2111,4 +2114,4 @@ $dictionary['pat_Patients'] = array(
 if (!class_exists('VardefManager')) {
         require_once('include/SugarObjects/VardefManager.php');
 }
-VardefManager::createVardef('pat_Patients', 'pat_Patients', array('basic','assignable','security_groups','person'));
+VardefManager::createVardef('pat_Patients', 'pat_Patients', array('basic','assignable','security_groups','person'));

@@ -51,7 +51,8 @@
     value='{$value}' title='{{$vardef.help}}' {{if !empty($tabindex)}} tabindex='{{$tabindex}}' {{/if}}
     {{if !empty($displayParams.accesskey)}} accesskey='{{$displayParams.accesskey}}' {{/if}} {{$displayParams.field}}>
 
-{assign var="last_char" value='{{$vardef.help|substr:-1}}' }
-<div class='help-text' attr-content='{if {{$vardef.help|count_characters}} > 0}{1}{else}{0}{/if}' prefix='{if $last_char == '?'}{{"Q"}}{else}{{"C"}}{/if}' title='{if $last_char == '?'}{{"Question à laquelle répondre"}}{else}{{"Conseil relatif à la réponse"}}{/if}'> 
-  {{$vardef.help}}
+{assign var="helptext" value='{{$vardef.help}}' string=true }
+{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en}}' } {/if}
+<div class='help-text' question='{$question}' last-char='{$last_char}' help-count='{$help_count}' attr-content='{if $help_count > 0}{1}{else}{0}{/if}' prefix='{if $last_char == '?'}{{"Q"}}{else}{{"C"}}{/if}' title='{if $last_char == '?'}{{"Question à laquelle répondre"}}{else}{{"Conseil relatif à la réponse"}}{/if}'>
+  {$helptext}
 </div>
