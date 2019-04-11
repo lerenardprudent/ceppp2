@@ -58,9 +58,9 @@ cols="{{if !empty($displayParams.cols)}}{{$displayParams.cols}}{{elseif !empty($
 tabindex="{{$tabindex}}" {{$displayParams.field}}
 {{if !empty($displayParams.accesskey)}} accesskey='{{$displayParams.accesskey}}' {{/if}} >{$value}</textarea>
 
-{assign var="helptext" value='{{$vardef.help}}' string=true }
-{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en}}' } {/if}
-<div class='help-text' question='{$question}' last-char='{$last_char}' help-count='{$help_count}' attr-content='{if $help_count > 0}{1}{else}{0}{/if}' prefix='{if $last_char == '?'}{{"Q"}}{else}{{"C"}}{/if}' title='{if $last_char == '?'}{{"Question à laquelle répondre"}}{else}{{"Conseil relatif à la réponse"}}{/if}'>
+{assign var="helptext" value='{{$vardef.help|escape}}'}
+{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en|escape}}' } {/if}
+<div class='help-text'>
   {$helptext}
 </div>
 
