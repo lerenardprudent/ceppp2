@@ -33,15 +33,15 @@ array (
       'useTabs' => false,
       'tabDefs' => 
       array (
-        'LBL_EDITVIEW_PANEL12' => 
+        'LBL_EDITVIEW_PANEL13' => 
         array (
           'newTab' => false,
           'panelDefault' => 'expanded',
         ),
-        'LBL_EDITVIEW_PANEL13' => 
+        'LBL_EDITVIEW_PANEL12' => 
         array (
           'newTab' => false,
-          'panelDefault' => 'collapsed',
+          'panelDefault' => 'expanded',
         ),
         'LBL_CONTACT_INFORMATION' => 
         array (
@@ -108,27 +108,6 @@ array (
     ),
     'panels' => 
     array (
-      'lbl_editview_panel12' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'consentement_dcpp_recrut',
-            'studio' => 'visible',
-            'label' => 'LBL_CONSENTEMENT_DCPP_RECRUT',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'consentement_recherche',
-            'studio' => 'visible',
-            'label' => 'LBL_CONSENTEMENT_RECHERCHE',
-          ),
-        ),
-      ),
       'lbl_editview_panel13' => 
       array (
         0 => 
@@ -165,6 +144,27 @@ array (
             'label' => 'LBL_ASSIGNED_TO_NAME',
           ),
           1 => '',
+        ),
+      ),
+      'lbl_editview_panel12' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'consentement_dcpp_recrut',
+            'studio' => 'visible',
+            'label' => 'LBL_CONSENTEMENT_DCPP_RECRUT',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'consentement_recherche',
+            'studio' => 'visible',
+            'label' => 'LBL_CONSENTEMENT_RECHERCHE',
+          ),
         ),
       ),
       'lbl_contact_information' => 

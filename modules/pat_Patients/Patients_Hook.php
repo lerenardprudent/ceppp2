@@ -114,6 +114,11 @@ class Patients_Hook {
     }
   }
   
+  function catch_db_error($bean, $event, $arguments)
+  {
+    $foo = 1;
+  }
+  
   function create_patient_perspective($bean, $event, $arguments) {
     if ( $bean->module_name == "pat_Patients") {
       global $current_user;
