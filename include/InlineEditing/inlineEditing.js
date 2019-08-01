@@ -343,7 +343,6 @@ function getInputValue(field,type){
               case 'SmartDropdown':
                 $select = $('select[name='+field+']');
                 if ( $select.length ) {
-                  console.log("YO YO");
                   var vals = $select.find('option:selected').map(function() { return $(this).val(); }).get().filter(function(x) { return $.trim(x).length > 0; });
                   return vals.join('&');
                 }

@@ -587,7 +587,7 @@ class EditView
 
                 foreach (array("formula", "default", "comments", "help") as $toEscape) {
                     if (!empty($this->fieldDefs[$name][$toEscape])) {
-                        $this->fieldDefs[$name][$toEscape] = htmlentities(
+                      $this->fieldDefs[$name][$toEscape] = htmlentities(
                             $this->fieldDefs[$name][$toEscape],
                             ENT_QUOTES,
                             'UTF-8'

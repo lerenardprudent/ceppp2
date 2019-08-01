@@ -51,8 +51,8 @@
     value='{$value}' title='{{$vardef.help}}' {{if !empty($tabindex)}} tabindex='{{$tabindex}}' {{/if}}
     {{if !empty($displayParams.accesskey)}} accesskey='{{$displayParams.accesskey}}' {{/if}} {{$displayParams.field}}>
 
-{assign var="helptext" value='{{$vardef.help|escape}}'}
-{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en|escape}}' } {/if}
+{assign var="helptext" value='{{$vardef.qdetail|escape}}'}
+{if $lang == "en"} {assign var="helptext" value='{{$vardef.qdetail_en|escape}}' } {/if}
 <div class='help-text'>
   {$helptext}
 </div>

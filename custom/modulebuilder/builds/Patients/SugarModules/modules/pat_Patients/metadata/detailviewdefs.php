@@ -272,22 +272,12 @@ array (
         array (
           0 => 
           array (
-            'name' => 'role_pp',
-            'studio' => 'visible',
-            'label' => 'LBL_ROLE_PP',
-          ),
-          1 => '',
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
             'name' => 'experience_maladie',
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE',
           ),
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -295,7 +285,7 @@ array (
             'label' => 'LBL_DOMAINE_SOIN',
           ),
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -304,7 +294,7 @@ array (
             'label' => 'LBL_PROB_SANT',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -313,7 +303,7 @@ array (
             'label' => 'LBL_MED_1',
           ),
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -321,7 +311,7 @@ array (
             'label' => 'LBL_ETABL_SANTE',
           ),
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -329,7 +319,7 @@ array (
             'label' => 'LBL_ETABL_PREM_LIGNE',
           ),
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -337,6 +327,15 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_EXP_DECISION',
           ),
+        ),
+        7 => 
+        array (
+          0 => 
+          array (
+            'name' => 'professionnels_sante',
+            'label' => 'LBL_PROFESSIONNELS_SANTE',
+          ),
+          1 => '',
         ),
       ),
       'lbl_editview_panel4' => 
@@ -399,11 +398,21 @@ array (
         array (
           0 => 
           array (
+            'name' => 'role_pp',
+            'studio' => 'visible',
+            'label' => 'LBL_ROLE_PP',
+          ),
+          1 => '',
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
             'name' => 'descr_exp',
             'label' => 'LBL_DESCR_EXP',
           ),
         ),
-        1 => 
+        2 => 
         array (
           0 => 
           array (
@@ -417,7 +426,7 @@ array (
             'label' => 'LBL_FORMATION_OUI',
           ),
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -425,7 +434,7 @@ array (
             'label' => 'LBL_FORMATION_QUI',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (

@@ -39,8 +39,8 @@
   {/foreach}
 </select>
 
-{assign var="helptext" value='{{$vardef.help|escape}}'}
-{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en|escape}}' } {/if}
+{assign var="helptext" value='{{$vardef.qdetail|escape}}'}
+{if $lang == "en"} {assign var="helptext" value='{{$vardef.qdetail_en|escape}}' } {/if}
 <div class='help-text smart-dropdown'>
   {$helptext}
 </div>

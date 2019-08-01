@@ -583,7 +583,7 @@ $mod_strings = array(
     'LBL_AJAX_DEPLOYPROGRESS' => 'Déploiement en cours...',
 
     'LBL_AJAX_RESPONSE_TITLE' => 'Résultat',
-    'LBL_AJAX_RESPONSE_MESSAGE' => 'Cette opération c\'est terminée avec succès',
+    'LBL_AJAX_RESPONSE_MESSAGE' => 'Cette opération s\'est terminée avec succès',
     'LBL_AJAX_LOADING_TITLE' => 'En traitement...',
     'LBL_AJAX_LOADING_MESSAGE' => 'Veuillez patienter pendant le chargement...',
 

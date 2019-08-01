@@ -67,8 +67,8 @@
         {html_radios id="$idname" class='blocking-radioenum' consentwithdrawn="$consentwithdrawn"  onclick="consent_change(event)" {{if !empty($displayParams.accesskey)}} accesskey='{{$displayParams.accesskey}}' {{/if}}  name="$idname" title="{{$vardef.help}}" options={{sugarvar key='options' string=true}} selected={{sugarvar key='default' string=true}} separator="{{$vardef.separator}}" blockedlabel="$blockedlabel" }
 {/if}
 
-{assign var="helptext" value='{{$vardef.help|escape}}'}
-{if $lang == "en"} {assign var="helptext" value='{{$vardef.help_en|escape}}' } {/if}
+{assign var="helptext" value='{{$vardef.qdetail|escape}}'}
+{if $lang == "en"} {assign var="helptext" value='{{$vardef.qdetail_en|escape}}' } {/if}
 <div class='help-text smart-dropdown'>
   {$helptext}
 </div>
