@@ -890,7 +890,7 @@ $dictionary['pat_Patients'] = array(
     'massupdate' => 0,
     'no_default' => false,
     'comments' => '',
-    'qdetail' => 'Pouvez-vous décrire l\'expérience avec la maladie de votre proche?<br>Pouvez-vous décrire votre implication dans le parcours de soins de votre proche? ',
+    'qdetail' => 'Pouvez-vous décrire l\'expérience avec la maladie de votre proche? Pouvez-vous décrire votre implication dans le parcours de soins de votre proche? ',
     'qdetail_en' => 'What is your family member\'s experience with illness?',
     'importable' => 'true',
     'duplicate_merge' => 'disabled',
@@ -2219,4 +2219,4 @@ $dictionary['pat_Patients'] = array(
 if (!class_exists('VardefManager')) {
         require_once('include/SugarObjects/VardefManager.php');
 }
-VardefManager::createVardef('pat_Patients', 'pat_Patients', array('basic','assignable','security_groups','person'));
+VardefManager::createVardef('pat_Patients', 'pat_Patients', array('basic','assignable','security_groups','person'));
