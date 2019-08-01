@@ -334,12 +334,22 @@ array (
         array (
           0 => 
           array (
+            'name' => 'experience_maladie_pa',
+            'studio' => 'visible',
+            'label' => 'LBL_EXPERIENCE_MALADIE_PA',
+          ),
+          1 => '',
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
             'name' => 'experience_maladie_proche',
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE_PROCHE',
           ),
         ),
-        1 => 
+        2 => 
         array (
           0 => 
           array (
@@ -348,7 +358,7 @@ array (
             'label' => 'LBL_REL_PATIENT',
           ),
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -356,7 +366,7 @@ array (
             'label' => 'LBL_DOMAINE_SOIN_PA',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -365,7 +375,7 @@ array (
             'label' => 'LBL_PROB_SANT_PA',
           ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -373,7 +383,7 @@ array (
             'label' => 'LBL_ETABL_SANTE_PA_',
           ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (

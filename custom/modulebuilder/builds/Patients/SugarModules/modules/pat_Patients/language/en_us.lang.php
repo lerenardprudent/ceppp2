@@ -236,4 +236,5 @@ $mod_strings = array (
   'LBL_ASSISTANCE_VISION' => 'Besoin d&#039;assistance',
   'LBL_EXPERIENCE_MALADIE_PP' => 'Description de l&#039;expérience',
   'LBL_PROFESSIONNELS_SANTE' => 'Healthcare professionals',
+  'LBL_EXPERIENCE_MALADIE_PA' => 'Experience as a carer',
 );
