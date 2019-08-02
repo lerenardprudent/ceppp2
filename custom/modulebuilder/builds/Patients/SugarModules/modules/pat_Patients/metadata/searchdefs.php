@@ -61,31 +61,6 @@ array (
         'default' => true,
         'width' => '10%',
       ),
-      'prob_sant' => 
-      array (
-        'type' => 'SmartDropdown',
-        'studio' => 'visible',
-        'label' => 'LBL_PROB_SANT',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'prob_sant',
-      ),
-      'etabl_sante' => 
-      array (
-        'type' => 'SmartDropdown',
-        'label' => 'LBL_ETABL_SANTE',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'etabl_sante',
-      ),
-      'domaine_soin' => 
-      array (
-        'type' => 'SmartDropdown',
-        'label' => 'LBL_DOMAINE_SOIN',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'domaine_soin',
-      ),
       'langue_parlee' => 
       array (
         'type' => 'SmartDropdown',

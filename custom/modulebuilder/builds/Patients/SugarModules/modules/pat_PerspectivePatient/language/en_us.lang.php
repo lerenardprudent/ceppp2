@@ -76,4 +76,6 @@ $mod_strings = array (
   'LBL_NEW_FORM_TITLE' => 'New Patient Perspective',
   'LBL_PERSPECTIVE' => 'Perspective',
   'LBL_EDITVIEW_PANEL1' => 'Hello World',
+  'LBL_EDITVIEW_PANEL2' => 'Address',
+  'LBL_EDITVIEW_PANEL3' => 'Experience with Illness - Patient Partner',
 );
