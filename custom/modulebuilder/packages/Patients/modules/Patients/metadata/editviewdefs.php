@@ -156,6 +156,15 @@ array (
             'label' => 'LBL_CONSENTEMENT_RECHERCHE',
           ),
         ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'consentement_usage_donnees',
+            'studio' => 'visible',
+            'label' => 'LBL_CONSENTEMENT_USAGE_DONNEES',
+          ),
+        ),
       ),
       'lbl_contact_information' => 
       array (
