@@ -3,7 +3,7 @@
 $mod_strings = array (
   'LBL_EDITVIEW_PANEL1' => 'Expérience maladie - Partenariat patient',
   'LBL_EXPERIENCE_MALADIE' => 'Expérience du PP avec la maladie',
-  'LBL_DOMAINE_SOIN' => 'Spécialités de soin',
+  'LBL_DOMAINE_SOIN' => "Je suis ou j'ai été suivi(e) dans les spécialités suivantes",
   'LBL_MED_1' => 'Médicaments #1',
   'LBL_DOMAINE_SOIN_2' => 'Spécialité domaine de soins #2',
   'LBL_DOMAINE_SOIN_3' => 'Spécialité domaine de soins #3',
