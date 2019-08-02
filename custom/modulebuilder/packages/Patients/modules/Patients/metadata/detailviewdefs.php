@@ -452,6 +452,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_EXP_SANTE',
           ),
+          1 => 
+          array (
+            'name' => 'exp_sante_detail',
+            'studio' => 'visible',
+            'label' => 'LBL_EXP_SANTE_DETAIL',
+          ),
         ),
       ),
       'lbl_editview_panel5' => 

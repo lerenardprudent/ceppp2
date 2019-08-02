@@ -159,7 +159,7 @@ $mod_strings = array (
   'LBL_PROB_RESP' => 'Problème respiratoire',
   'LBL_ETABL_SANTE' => 'Établissement de santé principal',
   'LBL_ETABL_PREM_LIGNE' => 'Établissement de première ligne',
-  'LBL_EXP_DECISION' => 'Expérience prise de décision',
+  'LBL_EXP_DECISION' => 'Expérience prise de décision relative à ses soins médicaux',
   'LBL_EXPERIENCE_MALADIE_PROCHE' => 'Expérience maladie proche',
   'LBL_REL_PATIENT' => 'Relation avec le patient',
   'LBL_DOMAINE_SOIN_PA' => 'Spécialités de soin',
@@ -230,4 +230,5 @@ $mod_strings = array (
   'LBL_EXPERIENCE_MALADIE_PP' => 'Description de l&#039;expérience',
   'LBL_PROFESSIONNELS_SANTE' => 'Professionnels de la santé',
   'LBL_EXPERIENCE_MALADIE_PA' => 'Expérience comme pair aidant',
+  'LBL_EXP_SANTE_DETAIL' => 'exp sante detail',
 );

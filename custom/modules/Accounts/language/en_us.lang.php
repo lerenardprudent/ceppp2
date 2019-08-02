@@ -1,7 +1,7 @@
 <?php
 // created: 2018-11-16 14:51:57
 $mod_strings = array (
-  'LBL_EDITVIEW_PANEL1' => 'Experience with Illness - Patient Partnership',
+  'LBL_EDITVIEW_PANEL1' => 'Experience with illness - Patient partner',
   'LBL_PAT_PATIENTS_ACCOUNTS_FROM_PAT_PATIENTS_TITLE' => 'Patient',
   'LBL_DETAILVIEW_PANEL1' => 'Patient',
   'LBL_EDITVIEW_PANEL2' => 'Experience with Illness - Caregiver',
