@@ -289,7 +289,6 @@ function clickedawaysave(field, id, module, type){
 function getInputValue(field,type){
 
     if($('#'+ field).length > 0 && type){
-
         switch(type) {
             case 'relate':
             case 'phone':
@@ -341,6 +340,7 @@ function getInputValue(field,type){
                 }
                 break;
               case 'SmartDropdown':
+                console.log("SMARTZZZ")
                 $select = $('select[name='+field+']');
                 if ( $select.length ) {
                   var vals = $select.find('option:selected').map(function() { return $(this).val(); }).get().filter(function(x) { return $.trim(x).length > 0; });
@@ -689,6 +689,7 @@ function clickedawaysavehandler(e)
         }
       } else
       if ( type == 'SmartDropdown' ) {
+        console.log("SMARTZZZ222")
         $outer = $(output_value);
         if ( $outer.is('span') ) {
           output_value_compare = $outer.attr('value');

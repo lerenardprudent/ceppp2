@@ -1,5 +1,5 @@
 
-<script src="custom/include/SugarFields/Fields/SmartDropdown/js/chosen.jquery.min.js"></script>
+<script src="custom/include/SugarFields/Fields/SmartDropdown/js/chosen.jquery.js"></script>
 <link rel="stylesheet" href="custom/include/SugarFields/Fields/SmartDropdown/css/chosen.min.css">
 <link rel="stylesheet" href="custom/include/SugarFields/Fields/SmartDropdown/css/custom.css">
 
@@ -56,7 +56,7 @@
           allow_single_deselect: true
         };
         $('#{/literal}{{if empty($displayParams.idName)}}{{sugarvar key='name'}}{{else}}
-        {{$displayParams.idName}}{{/if}}{literal}').chosen(chosenOptions).trigger('chosen:open');
+        {{$displayParams.idName}}{{/if}}{literal}').chosen(chosenOptions); /*.trigger('chosen:open');*/
     });
     
     function updateHidden(event) {
