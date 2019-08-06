@@ -3957,6 +3957,7 @@ $app_list_strings['yes_no_list']['non'] = 'No';
 $app_list_strings['langue_list']['francais'] = 'French';
 $app_list_strings['langue_list']['anglais'] = 'English';
 $app_list_strings['langue_list']['espagnol'] = 'Spanish';
+$app_list_strings['langue_list']['foo'] = 'Foo';
 $app_list_strings['langue_list']['autre'] = 'Other';
 $app_list_strings['etablissement_recrut_list']['DCPP']['dcpp_cours_css'] = 'Cours CSS';
 $app_list_strings['etablissement_recrut_list']['DCPP']['dcpp_comite_d_amelioration'] = 'Comité d\'amélioration continue';
