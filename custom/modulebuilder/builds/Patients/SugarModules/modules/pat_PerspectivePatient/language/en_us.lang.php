@@ -97,4 +97,6 @@ $mod_strings = array (
   'LBL_ETABL_PREM_LIGNE' => 'Secondary healthcare establishment',
   'LBL_EXP_DECISION' => 'Experience making decisions regarding own healthcare',
   'LBL_PROFESSIONNELS_SANTE' => 'Healthcare professionals',
+  'LBL_MALADIE_RARE_DETAILS' => 'Rare disease',
+  'LBL_PRENEUR_DECISIONS' => 'Person making decisions',
 );

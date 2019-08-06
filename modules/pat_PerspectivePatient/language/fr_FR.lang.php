@@ -94,4 +94,6 @@ $mod_strings = array (
   'LBL_ETABL_PREM_LIGNE' => 'Établissement de première ligne',
   'LBL_EXP_DECISION' => 'Expérience prise de décision relative à ses soins médicaux',
   'LBL_PROFESSIONNELS_SANTE' => 'Professionnels de la santé',
+  'LBL_MALADIE_RARE_DETAILS' => 'Maladie rare',
+  'LBL_PRENEUR_DECISIONS' => 'Preneur de décisions',
 );

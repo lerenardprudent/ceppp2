@@ -115,7 +115,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_PROB_SANT',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'maladie_rare_details',
+            'studio' => 'visible',
+            'label' => 'LBL_MALADIE_RARE_DETAILS',
+          ),
         ),
         3 => 
         array (
@@ -153,7 +158,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_EXP_DECISION',
           ),
-          1 => '',
+          1 => 
+          array (
+            'name' => 'preneur_decisions',
+            'studio' => 'visible',
+            'label' => 'LBL_PRENEUR_DECISIONS',
+          ),
         ),
         7 => 
         array (
