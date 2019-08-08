@@ -333,6 +333,11 @@ array (
             'name' => 'formation_qui',
             'label' => 'LBL_FORMATION_QUI',
           ),
+          1 => 
+          array (
+            'name' => 'formation_date',
+            'label' => 'LBL_FORMATION_DATE',
+          ),
         ),
         4 => 
         array (
@@ -405,6 +410,12 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_PREFERENCES',
           ),
+          1 => 
+          array (
+            'name' => 'preferences_autre',
+            'studio' => 'visible',
+            'label' => 'LBL_PREFERENCES_AUTRE',
+          ),
         ),
         5 => 
         array (
@@ -424,33 +435,6 @@ array (
             'name' => 'competences_pp',
             'studio' => 'visible',
             'label' => 'LBL_COMPETENCES_PP',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'competences_ppc',
-            'studio' => 'visible',
-            'label' => 'LBL_COMPETENCES_PPC',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'competences_pr',
-            'studio' => 'visible',
-            'label' => 'LBL_COMPETENCES_PR',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'habiletes_pp',
-            'studio' => 'visible',
-            'label' => 'LBL_HABILETES_PP',
           ),
         ),
       ),
