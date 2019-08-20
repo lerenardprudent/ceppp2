@@ -75,6 +75,21 @@ class pat_PatientsViewEdit extends ViewEdit
             echo '<script>$(document).ready(function(){' . $script . '})</script>';
         }
         
+        global $current_user;
+        include_once('modules/ACLRoles/ACLRole.php');
+        $roles = ACLRole::getUserRoleNames($current_user->id);
+        
+        $hidePanelScript = "";
+        $roleNames = array_map('strtolower', $roles);
+        foreach ( $roleNames as $roleName ) {
+          $hidePanelScript .= "$('body').attr('data-role-$roleName', 1);";
+        }
+        $patPerspPanelChildDivId = "detailpanel_10";
+        if (in_array("recruteur", $roleNames) ) {
+          $hidePanelScript .= "$('#$patPerspPanelChildDivId').closest('.panel').hide();";
+        }
+        echo '<script>$(document).ready(function(){' . $hidePanelScript . '})</script>';
+        
         $customJsFilePath = 'modules/pat_Patients/custom.js';
         echo "<script type='text/javascript' src='$customJsFilePath'>";
     }

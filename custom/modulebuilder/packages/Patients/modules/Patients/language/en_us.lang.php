@@ -221,4 +221,5 @@ $mod_strings = array (
   'LBL_EXP_SANTE_DETAIL' => 'Details',
   'LBL_FORMATION_DATE' => 'Date de formation',
   'LBL_PREFERENCES_AUTRE' => 'Autres préférences',
+  'LBL_DEPLACEMENTS' => 'Vous déplacer',
 );

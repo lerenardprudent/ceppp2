@@ -38,6 +38,11 @@ array (
           'newTab' => false,
           'panelDefault' => 'collapsed',
         ),
+        'LBL_EDITVIEW_PANEL2' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'collapsed',
+        ),
         'LBL_EDITVIEW_PANEL4' => 
         array (
           'newTab' => false,
@@ -64,11 +69,6 @@ array (
           'panelDefault' => 'collapsed',
         ),
         'LBL_EDITVIEW_PANEL10' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'collapsed',
-        ),
-        'LBL_EDITVIEW_PANEL2' => 
         array (
           'newTab' => false,
           'panelDefault' => 'collapsed',
@@ -209,12 +209,47 @@ array (
             'label' => 'LBL_TEL_MOBILE_PERSO',
           ),
         ),
-        5 => 
+      ),
+      'lbl_editview_panel2' => 
+      array (
+        0 => 
         array (
           0 => 
           array (
-            'name' => 'nas_perso_',
-            'label' => 'LBL_NAS_PERSO_',
+            'name' => 'naissance_perso',
+            'label' => 'LBL_NAISSANCE_PERSO',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'emploi_perso',
+            'studio' => 'visible',
+            'label' => 'LBL_EMPLOI_PERSO',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'education_perso',
+            'studio' => 'visible',
+            'label' => 'LBL_EDUCATION_PERSO',
+          ),
+          1 => 
+          array (
+            'name' => 'education_perso_autre',
+            'label' => 'LBL_EDUCATION_PERSO_AUTRE',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'groupe_designe',
+            'studio' => 'visible',
+            'label' => 'LBL_GROUPE_DESIGNE',
           ),
         ),
       ),
@@ -434,15 +469,6 @@ array (
         array (
           0 => 
           array (
-            'name' => 'patient_ajout',
-            'studio' => 'visible',
-            'label' => 'LBL_PATIENT_AJOUT',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
             'name' => 'comm_recruteur',
             'studio' => 'visible',
             'label' => 'LBL_COMM_RECRUTEUR',
@@ -473,6 +499,15 @@ array (
         array (
           0 => 
           array (
+            'name' => 'deplacements',
+            'label' => 'LBL_DEPLACEMENTS',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
             'name' => 'niveau_mob',
             'studio' => 'visible',
             'label' => 'LBL_NIVEAU_MOB',
@@ -483,7 +518,7 @@ array (
             'label' => 'LBL_ASSISTANCE_MOB',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -491,14 +526,8 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_NIVEAU_AUD',
           ),
-          1 => 
-          array (
-            'name' => 'assistance_audition',
-            'studio' => 'visible',
-            'label' => 'LBL_ASSISTANCE_AUDITION',
-          ),
         ),
-        4 => 
+        5 => 
         array (
           0 => 
           array (
@@ -506,14 +535,8 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_NIVEAU_VUE',
           ),
-          1 => 
-          array (
-            'name' => 'assistance_vision',
-            'studio' => 'visible',
-            'label' => 'LBL_ASSISTANCE_VISION',
-          ),
         ),
-        5 => 
+        6 => 
         array (
           0 => 
           array (
@@ -521,56 +544,13 @@ array (
             'label' => 'LBL_NIVEAU_AUTRE',
           ),
         ),
-        6 => 
+        7 => 
         array (
           0 => 
           array (
             'name' => 'association_etablissement_recr',
             'studio' => 'visible',
             'label' => 'LBL_ASSOCIATION_ETABLISSEMENT_RECR',
-          ),
-        ),
-      ),
-      'lbl_editview_panel2' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'naissance_perso',
-            'label' => 'LBL_NAISSANCE_PERSO',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'emploi_perso',
-            'studio' => 'visible',
-            'label' => 'LBL_EMPLOI_PERSO',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'education_perso',
-            'studio' => 'visible',
-            'label' => 'LBL_EDUCATION_PERSO',
-          ),
-          1 => 
-          array (
-            'name' => 'education_perso_autre',
-            'label' => 'LBL_EDUCATION_PERSO_AUTRE',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'groupe_designe',
-            'studio' => 'visible',
-            'label' => 'LBL_GROUPE_DESIGNE',
           ),
         ),
       ),
@@ -601,14 +581,6 @@ array (
           ),
         ),
         3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'comment_refere',
-            'label' => 'LBL_COMMENT_REFERE',
-          ),
-        ),
-        4 => 
         array (
           0 => 
           array (
