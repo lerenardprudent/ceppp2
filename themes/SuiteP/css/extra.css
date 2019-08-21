@@ -1,0 +1,15 @@
+.footer_right {
+  height: 100px;
+}
+
+.footer-logo {
+  display: inline-block;
+  max-width: 150px;
+  margin-right: 3px;
+  vertical-align: middle;
+  max-height: 100px;
+}
+
+#copyright_data {
+  display: none;
+}

@@ -63,7 +63,22 @@
             </div>
         </div>
     	<div class="footer_right">
-    		
+          {php}
+            $logoFilenames = array();
+            $path = $_SERVER['SCRIPT_FILENAME'];
+            $path = preg_replace('/[a-z\.]+$/', "themes/SuiteP/images/logos", $path);
+            $logoFilenames = glob($path.'/*');
+            foreach ( $logoFilenames as &$logoFilename ) {
+              $pos = strpos($logoFilename, "themes");
+              $logoFilename = substr($logoFilename, $pos);
+            }
+            $GLOBALS['log']->info("Logo files: ".implode('--', $logoFilenames));
+            $this->assign('LOGO_FILES', $logoFilenames);
+          {/php}
+          <span class='helper' style='display: inline-block;    height: 100%;    vertical-align: middle;'></span>
+          {foreach from=$LOGO_FILES key=k item=v}
+            <img class="footer-logo" src="{$v}">
+          {/foreach}
     		<a onclick="SUGAR.util.top();" href="javascript:void(0)">{$APP.LBL_SUITE_TOP}<span class="suitepicon suitepicon-action-above"></span> </a>
     	</div>
     </footer>
