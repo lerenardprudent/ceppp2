@@ -66,19 +66,39 @@
           {php}
             $logoFilenames = array();
             $path = $_SERVER['SCRIPT_FILENAME'];
+            $currRegion = $GLOBALS['current_language'];
+            $currLang = strtolower(substr($currRegion, 0, 2));
             $path = preg_replace('/[a-z\.]+$/', "themes/SuiteP/images/logos", $path);
-            $logoFilenames = glob($path.'/*');
+            $globPattern = "$path/init*{".$currLang.',_}.*';
+            $logoFilenames = glob($globPattern, GLOB_BRACE);
             foreach ( $logoFilenames as &$logoFilename ) {
               $pos = strpos($logoFilename, "themes");
               $logoFilename = substr($logoFilename, $pos);
             }
-            $GLOBALS['log']->info("Logo files: ".implode('--', $logoFilenames));
             $this->assign('LOGO_FILES', $logoFilenames);
           {/php}
+          <span class='logo-prel'>{sugar_translate label="LBL_LOGO_INITIATIVE_DE"}</span>
           <span class='helper' style='display: inline-block;    height: 100%;    vertical-align: middle;'></span>
           {foreach from=$LOGO_FILES key=k item=v}
             <img class="footer-logo" src="{$v}">
           {/foreach}
+          {php}
+            $logoFilenames = array();
+            $globPattern = "$path/sout*{".$currLang.',_}.*';
+            $logoFilenames = glob($globPattern, GLOB_BRACE);
+            foreach ( $logoFilenames as &$logoFilename ) {
+              $pos = strpos($logoFilename, "themes");
+              $logoFilename = substr($logoFilename, $pos);
+            }
+            $this->assign('LOGO_FILES', $logoFilenames);
+          {/php}
+          <span class='logo-prel'>{sugar_translate label="LBL_LOGO_SOUTENU_PAR"}</span>
+          <span class='helper' style='display: inline-block;    height: 100%;    vertical-align: middle;'></span>
+          {foreach from=$LOGO_FILES key=k item=v}
+            <img class="footer-logo" src="{$v}">
+          {/foreach}
+          
+          
     		<a onclick="SUGAR.util.top();" href="javascript:void(0)">{$APP.LBL_SUITE_TOP}<span class="suitepicon suitepicon-action-above"></span> </a>
     	</div>
     </footer>

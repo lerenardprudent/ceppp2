@@ -2143,6 +2143,9 @@ $app_strings = array(
     'LBL_CONTACT_HAS_NO_PRIMARY_EMAIL' => 'Impossible d\'envoyer le courriel de confirmation d\'OptIn car le contact n\'a aucune adresse courriel principale',
     'LBL_CONFIRM_EMAIL_SENDING_FAILED' => 'Erreur d\'envoi du courriel de confirmation d\'OptIn',
     'LBL_CONFIRM_EMAIL_SENT' => 'Courriel de confirmation d\'OptIn envoyé avec succès',
+    
+    'LBL_LOGO_INITIATIVE_DE' => "Initiative de",
+    'LBL_LOGO_SOUTENU_PAR' => "Soutenu par"
 );
 
 $app_list_strings['moduleList']['Library'] = 'Librairie';

@@ -2142,6 +2142,9 @@ $app_strings = array(
     'LBL_CONTACT_HAS_NO_PRIMARY_EMAIL' => 'Confirm Opt In Email sending is not possible because the Contact has not Primary Email Address',
     'LBL_CONFIRM_EMAIL_SENDING_FAILED' => 'Confirm Opt In Email sending failed',
     'LBL_CONFIRM_EMAIL_SENT' => 'Confirm Opt In Email sent successfully',
+    
+    'LBL_LOGO_INITIATIVE_DE' => "An initiative of",
+    'LBL_LOGO_SOUTENU_PAR' => "Supported by"
 );
 
 $app_list_strings['moduleList']['Library'] = 'Library';

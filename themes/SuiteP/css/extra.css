@@ -2,6 +2,10 @@
   height: 100px;
 }
 
+.footer_right > a {
+  margin-left: 20px;
+}
+
 .footer-logo {
   display: inline-block;
   max-width: 150px;
@@ -12,4 +16,15 @@
 
 #copyright_data {
   display: none;
+}
+
+.logo-prel {
+  color: green;
+  font-size: 18px;
+  margin-left: 10px;
+  text-transform: none;
+  font-style: italic;
+  display: inline-block;
+  line-height: 100px;
+  vertical-align: middle;
 }
