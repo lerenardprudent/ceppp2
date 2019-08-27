@@ -76,5 +76,5 @@ $mod_strings = array (
   'LBL_NEW_FORM_TITLE' => 'Nouveau Entrevues',
   'LBL_DATE_ENTREVUE' => 'Date d\'entrevue',
   'LBL_COMMENT_REFERE' => 'Comment',
-  'LBL_ORG_REF_RECRUT' => 'Établissement du recruteur',
+  'LBL_ORG_REF_RECRUT' => 'Établissement de recrutement',
 );

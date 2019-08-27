@@ -10,7 +10,7 @@
 {/if}
 
 {assign var="opts" value={{sugarvar key='options' string=true}} }
-{assign var="value" value='&'|explode:$value string=true}
+{assign var="val" value='&'|explode:$value string=true}
 {if strlen({{sugarvar key='isMultiSelect' string=true}}) == 1}
     {assign var="mult" value="multiple" }
     {assign var="chosen_placeholder" value=$APP.LBL_CHOSEN_JS_PLACEHOLDER_MULTIPLE }
@@ -30,11 +30,11 @@
     {if is_array($vg)}
     <optgroup label='{$kg}'>
       {foreach from=$vg key=k item=v}
-        <option value="{$k}" {if in_array($k, $value)} selected {/if}>{$v}</option>
+        <option value="{$k}" {if in_array($k, $val)} selected {/if}>{$v}</option>
       {/foreach}
     </optgroup>
     {else}
-      <option value="{$kg}" {if in_array($kg, $value)} selected {/if}>{$vg}</option>
+      <option value="{$kg}" {if in_array($kg, $val)} selected {/if}>{$vg}</option>
     {/if}
   {/foreach}
 </select>
@@ -46,17 +46,15 @@
 </div>
 {if strlen({{sugarvar key='isMultiSelect' string=true}}) == 1}
 <input type="hidden" id='{{if empty($displayParams.idName)}}{{sugarvar key='name'}}{{else}}{{$displayParams.idName}}{{/if}}'
-  name='{{if empty($displayParams.idName)}}{{sugarvar key='name'}}{{else}}{{$displayParams.idName}}{{/if}}' value="{{$value}}" />
+  name='{{if empty($displayParams.idName)}}{{sugarvar key='name'}}{{else}}{{$displayParams.idName}}{{/if}}' value="{$value}" />
 {/if}
         
 <script>
     {literal}
     $(document).ready(function(){
-        var chosenOptions = {
-          allow_single_deselect: true
-        };
+        var chosenOptions = {};
         $('#{/literal}{{if empty($displayParams.idName)}}{{sugarvar key='name'}}{{else}}
-        {{$displayParams.idName}}{{/if}}{literal}').chosen(chosenOptions); /*.trigger('chosen:open');*/
+        {{$displayParams.idName}}{{/if}}{literal}').chosen(chosenOptions);
     });
     
     function updateHidden(event) {
@@ -64,8 +62,10 @@
       var name = $target.prop('name');
       $hidden = $('[name="' + name + '"][type="hidden"]' );
       if ( $hidden.length ) {
-        console.log($target.val());
         var val = $target.val();
+        if ( val == null ) {
+          val = "";
+        } else
         if ( typeof(val) === "object" ) {
           val = val.filter(function(x) { return $.trim(x).length > 0; });
           val = val.join("&");

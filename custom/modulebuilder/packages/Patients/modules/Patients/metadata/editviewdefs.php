@@ -544,15 +544,6 @@ array (
             'label' => 'LBL_NIVEAU_AUTRE',
           ),
         ),
-        7 => 
-        array (
-          0 => 
-          array (
-            'name' => 'association_etablissement_recr',
-            'studio' => 'visible',
-            'label' => 'LBL_ASSOCIATION_ETABLISSEMENT_RECR',
-          ),
-        ),
       ),
       'lbl_editview_panel11' => 
       array (
@@ -584,8 +575,9 @@ array (
         array (
           0 => 
           array (
-            'name' => 'org_ref_recrut',
-            'label' => 'LBL_ORG_REF_RECRUT',
+            'name' => 'association_etablissement_recr',
+            'studio' => 'visible',
+            'label' => 'LBL_ASSOCIATION_ETABLISSEMENT_RECR',
           ),
         ),
       ),

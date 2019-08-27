@@ -75,6 +75,7 @@ class pat_PatientsViewEdit extends ViewEdit
             echo '<script>$(document).ready(function(){' . $script . '})</script>';
         }
         
+        /* dmarg 20190827 */
         global $current_user;
         include_once('modules/ACLRoles/ACLRole.php');
         $roles = ACLRole::getUserRoleNames($current_user->id);
@@ -86,7 +87,7 @@ class pat_PatientsViewEdit extends ViewEdit
         }
         $patPerspPanelChildDivId = "detailpanel_10";
         if (in_array("recruteur", $roleNames) ) {
-          $hidePanelScript .= "$('#$patPerspPanelChildDivId').closest('.panel').hide();";
+          /*$hidePanelScript .= "$('#$patPerspPanelChildDivId').closest('.panel').hide();"; NOT HIDING ANYMORE */ 
         }
         echo '<script>$(document).ready(function(){' . $hidePanelScript . '})</script>';
         
