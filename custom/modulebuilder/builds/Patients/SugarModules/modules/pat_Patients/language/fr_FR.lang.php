@@ -215,4 +215,5 @@ $mod_strings = array (
   'LBL_FORMATION_DATE' => 'Date de formation',
   'LBL_PREFERENCES_AUTRE' => 'Autres préférences',
   'LBL_DEPLACEMENTS' => 'Comment vous déplacez-vous ?',
+  'LBL_EDITVIEW_PANEL14' => 'Perspective Patient',
 );
