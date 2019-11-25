@@ -46,7 +46,7 @@ class pat_PatientsViewDetail extends ViewDetail
     {
         parent::__construct();
     }
-
+    
     public function display()
     {
       parent::display();

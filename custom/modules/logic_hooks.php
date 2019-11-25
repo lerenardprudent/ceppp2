@@ -5,8 +5,9 @@
 $hook_array = Array(); 
 // position, file, function 
 $hook_array['before_save'] = Array(); 
-$hook_array['before_save'][] = Array(1, 'Update First Name field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'update_default_name_fields'); 
-$hook_array['before_save'][] = Array(1, 'Set Security Group Field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'set_security_group_field'); 
+//$hook_array['before_save'][] = Array(2, 'Assign Patient ID', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'assign_patient_id'); 
+$hook_array['before_save'][] = Array(2, 'Update First Name field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'update_default_name_fields'); 
+$hook_array['before_save'][] = Array(3, 'Set Security Group Field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'set_security_group_field'); 
 $hook_array['process_record'] = Array(); 
 $hook_array['process_record'][] = Array(1, 'Test for catching database error', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'catch_db_error'); 
 $hook_array['after_save'] = Array(); 

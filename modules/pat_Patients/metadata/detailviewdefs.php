@@ -106,6 +106,7 @@ array (
           array (
             'name' => 'code_ident',
             'label' => 'LBL_CODE_IDENT',
+              'type' => 'readonly'
           ),
         ),
         1 => 

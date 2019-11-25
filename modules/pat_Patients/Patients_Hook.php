@@ -48,7 +48,7 @@ class Patients_Hook {
   }
   
   function create_patient_access($bean, $event, $arguments) {
-    if ( $bean->module_name == "pat_Patients") {
+    if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
       $db = DBManagerFactory::getInstance();
       $id = $this->quote($this->gen_uuid());
       $code = $bean->code_ident;
@@ -68,7 +68,7 @@ class Patients_Hook {
   }
   
   function assign_patient_access_rights($bean, $event, $arguments) {
-    if ( $bean->module_name == "pat_Patients") {
+    if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
       global $current_user;
       $currUserId = $current_user->id;
       $db = DBManagerFactory::getInstance();
@@ -120,7 +120,7 @@ class Patients_Hook {
   }
   
   function create_patient_perspective($bean, $event, $arguments) {
-    if ( $bean->module_name == "pat_Patients") {
+    if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
       global $current_user;
       $currUserId = $this->quote($current_user->id);
       $db = DBManagerFactory::getInstance();
@@ -153,7 +153,7 @@ class Patients_Hook {
     $code = $bean->code_ident;
     $uname = $this->quote($code);
     
-    if ( $bean->module_name == "pat_Patients") {
+    if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
       $query = "SELECT * FROM users WHERE user_name = $uname";
       $patUserId = $db->getOne($query);
       if ( !empty($patUserId) ) {
@@ -196,5 +196,9 @@ class Patients_Hook {
   
   function quote($str) {
     return "\"$str\"";
+  }
+  
+  function new_entry($bean) {
+    return !$bean->fetched_row;
   }
 }
