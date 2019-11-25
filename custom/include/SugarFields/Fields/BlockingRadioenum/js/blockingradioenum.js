@@ -3,13 +3,18 @@ $(document).ready(function() {
 });
 
 function consent_change(event) {
+  var ignoreConsentChange = true;
   $target = $(event.target);
   console.log("Consent change for ", $target.prop('id'));
-  var mustBlock = checkIfMustBlock($target);
-  if ( mustBlock ) {
-    var warningMsg = SUGAR.language.translate('app_strings', 'LBL_CONSENT_WITHDRAWN_WARNING') + ".";
-    if ( warningMsg.length ) {
-      alert(warningMsg);
+  if ( ignoreConsentChange ) {
+    console.log("## IGNORED ##")
+  } else {
+    var mustBlock = checkIfMustBlock($target);
+    if ( mustBlock ) {
+      var warningMsg = SUGAR.language.translate('app_strings', 'LBL_CONSENT_WITHDRAWN_WARNING') + ".";
+      if ( warningMsg.length ) {
+        alert(warningMsg);
+      }
     }
   }
 }
