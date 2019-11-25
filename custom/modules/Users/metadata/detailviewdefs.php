@@ -25,20 +25,21 @@ array (
           'field' => '30',
         ),
       ),
-      'useTabs' => true,
+      'useTabs' => false,
       'tabDefs' => 
       array (
         'LBL_USER_INFORMATION' => 
         array (
-          'newTab' => true,
+          'newTab' => false,
           'panelDefault' => 'expanded',
         ),
         'LBL_EMPLOYEE_INFORMATION' => 
         array (
           'newTab' => false,
-          'panelDefault' => 'collapsed',
+          'panelDefault' => 'expanded',
         ),
       ),
+      'syncDetailEditViews' => true,
     ),
     'useTabs' => true,
     'tabDefs' => 
@@ -60,21 +61,56 @@ array (
       array (
         0 => 
         array (
-          0 => 'full_name',
-          1 => 'user_name',
+          0 => 'user_name',
+          1 => 
+          array (
+            'name' => 'first_name',
+            'label' => 'LBL_FIRST_NAME',
+          ),
         ),
         1 => 
         array (
           0 => 'status',
           1 => 
           array (
-            'name' => 'UserType',
-            'customCode' => '{$USER_TYPE_READONLY}',
+            'name' => 'last_name',
+            'label' => 'LBL_LAST_NAME',
           ),
         ),
         2 => 
         array (
+          0 => 
+          array (
+            'name' => 'UserType',
+            'customCode' => '{$USER_TYPE_READONLY}',
+          ),
+        ),
+        3 => 
+        array (
           0 => 'photo',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'factor_auth',
+            'label' => 'LBL_FACTOR_AUTH',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'date_last_login_c',
+            'label' => 'LBL_DATE_LAST_LOGIN',
+            'type' => 'readonly'
+          ),
+          1 => 
+          array (
+            'name' => 'date_last_logout_c',
+            'label' => 'LBL_DATE_LAST_LOGOUT',
+            'type' => 'readonly'
+          ),
         ),
       ),
       'LBL_EMPLOYEE_INFORMATION' => 

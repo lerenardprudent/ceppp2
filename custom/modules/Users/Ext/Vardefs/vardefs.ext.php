@@ -35,4 +35,16 @@ $dictionary["User"]["fields"]["ent_entrevues_usersent_entrevues_ida"] = array (
   'vname' => 'LBL_ENT_ENTREVUES_USERS_FROM_ENT_ENTREVUES_TITLE',
 );
 
+
+ // created: 2019-11-25 17:49:24
+$dictionary['User']['fields']['date_last_login_c']['inline_edit']='';
+$dictionary['User']['fields']['date_last_login_c']['labelValue']='LBL_DATE_LAST_LOGIN';
+
+ 
+
+ // created: 2019-11-25 17:49:41
+$dictionary['User']['fields']['date_last_logout_c']['inline_edit']='';
+$dictionary['User']['fields']['date_last_logout_c']['labelValue']='LBL_DATE_LAST_LOGOUT';
+
+ 
 ?>

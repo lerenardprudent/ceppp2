@@ -16,7 +16,8 @@ $hook_array['after_save'][] = Array(3, 'Create PerspectivePatient', 'modules/pat
 $hook_array['after_save'][] = Array(4, 'Initiate Preferences', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'initiate_patient_preferences'); 
 
 $hook_array['after_login'] = Array(); 
-$hook_array['after_login'][] = Array(1, 'Home Redirect', 'modules/pat_PerspectivePatient/PerspectivePatient_Hooks.php','PerspectivePatient_Hooks', 'homeRedirect');
+$hook_array['after_login'][] = Array(1, 'Record login date/time', 'modules/Users/User_Hooks.php','User_Hooks', 'recordLoginDateTime');
+$hook_array['before_logout'][] = Array(1, 'Record logout date/time', 'modules/Users/User_Hooks.php','User_Hooks', 'recordLogoutDateTime');
 
 /*$hook_array['after_save'][] = Array(1, 'AOD Index Changes', 'modules/AOD_Index/AOD_LogicHooks.php','AOD_LogicHooks', 'saveModuleChanges'); 
 $hook_array['after_save'][] = Array(30, 'popup_select', 'modules/SecurityGroups/AssignGroups.php','AssignGroups', 'popup_select'); 

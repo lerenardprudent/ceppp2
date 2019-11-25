@@ -89,21 +89,6 @@ array (
             'label' => 'LBL_FACTOR_AUTH',
           ),
         ),
-        5 => 
-        array (
-          0 => 
-          array (
-            'name' => 'date_last_login_c',
-            'label' => 'LBL_DATE_LAST_LOGIN',
-            'type' => 'readonly'
-          ),
-          1 => 
-          array (
-            'name' => 'date_last_logout_c',
-            'label' => 'LBL_DATE_LAST_LOGOUT',
-            'type' => 'readonly'
-          ),
-        ),
       ),
       'LBL_EMPLOYEE_INFORMATION' => 
       array (
