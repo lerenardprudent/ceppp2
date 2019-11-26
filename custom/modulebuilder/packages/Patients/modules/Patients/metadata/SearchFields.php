@@ -113,5 +113,15 @@ $searchFields[$module_name] = array(
         'enable_range_search' => true,
         'is_date_field' => true
     ),
+    'age_min' => array(
+      'query_type' => 'default',
+      'operator' => 'greater_than_equals',
+      'db_field' => [ 'naissance_perso' ]
+    ),
+    'age_max' => array(
+      'query_type' => 'default',
+      'operator' => 'less_than_equals',
+      'db_field' => [ 'naissance_perso' ]
+    )
     //Range Search Support
 );

@@ -414,6 +414,10 @@ class SearchForm
                             case '=':
                                 $where .=  $db_field . " = ".$this->bean->db->quoted($field_value);
                                 break;
+                            case '<=':
+                            case '>=':
+                                $where .=  $db_field . " $operator ".$field_value;
+                                break;
                             case 'between':
                                 if (!is_array($field_value)) {
                                     $field_value = explode('<>', $field_value);

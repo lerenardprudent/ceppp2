@@ -897,6 +897,18 @@ class SearchForm
             // when searching for numeric fields. This is a temporary fix until we have
             // a generic search form validation mechanism.
             $type = (!empty($this->seed->field_name_map[$field]['type'])) ? $this->seed->field_name_map[$field]['type'] : '';
+            
+            /* HACK DMARG 2019-11-26 */
+            if ( empty($type) ) {
+              $layout = $this->searchdefs['layout'];
+              foreach ( $layout as $filter_type => $layout_details ) {
+                $layout_field_info = $layout_details[$field];
+                if ( $layout_field_info && isset($layout_field_info['type'] ) ) {
+                  $type = $layout_field_info['type'];
+                  break;
+                }
+              }
+            }
 
             //If range search is enabled for the field, we first check if this is the starting range
             if (!empty($parms['enable_range_search']) && empty($type)) {
@@ -1207,7 +1219,6 @@ class SearchForm
                             }
                         }
 
-
                         if ($db->supports("case_sensitive") && isset($parms['query_type']) && $parms['query_type'] == 'case_insensitive') {
                             $db_field = 'upper(' . $db_field . ")";
                             $field_value = strtoupper($field_value);
@@ -1378,15 +1389,31 @@ class SearchForm
                                 $where .= "$db_field > $field_value";
                                 break;
                             case 'greater_than_equals':
+                              if ( $type == "numeric") {
+                                $dbfldinfo = $this->seed->field_defs[$parms['db_field'][0]];
+                                $dbn = $dbfldinfo['name'];
+                                $dbt = $dbfldinfo['type'];
+                                $foo = 1;
+                              } else {
                                 $field_value = $db->quoteType($type, $field_value);
+                              }
                                 $where .= "$db_field >= $field_value";
+                                
                                 break;
                             case 'less_than':
                                 $field_value = $db->quoteType($type, $field_value);
                                 $where .= "$db_field < $field_value";
                                 break;
                             case 'less_than_equals':
+                              if ( $type == "numeric") {
+                                $dbfldinfo = $this->seed->field_defs[$parms['db_field'][0]];
+                                $dbn = $dbfldinfo['name'];
+                                $dbt = $dbfldinfo['type'];
+                                $foo = 1;
+                                
+                              } else {
                                 $field_value = $db->quoteType($type, $field_value);
+                              }
                                 $where .= "$db_field <= $field_value";
                                 break;
                             case 'next_7_days':

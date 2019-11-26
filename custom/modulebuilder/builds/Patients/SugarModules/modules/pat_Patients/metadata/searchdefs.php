@@ -15,15 +15,24 @@ array (
         'default' => true,
         'name' => 'genre',
       ),
-      'age' => 
-      array (
-        'type' => 'numeric',
-        'studio' => 'visible',
-        'label' => 'LBL_AGE_MIN',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'age_min',
-      ),
+      'age_min' => 
+          array(
+            'type' => 'numeric',
+            'studio' => 'visible',
+            'label' => 'LBL_AGE_MIN',
+            'width' => '10%',
+            'default' => true,
+            'name' => 'age_min',
+        ),
+      'age_max' => 
+          array(
+            'type' => 'numeric',
+            'studio' => 'visible',
+            'label' => 'LBL_AGE_MAX',
+            'width' => '10%',
+            'default' => true,
+            'name' => 'age_max',
+        ),
       'prob_sant_pa' => 
       array (
         'type' => 'SmartDropdown',
