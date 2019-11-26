@@ -1,0 +1,1 @@
+$('input[name="code_ident"]').attr("readonly","readonly")

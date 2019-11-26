@@ -41,6 +41,7 @@
 *}
 
 <script src="custom/include/SugarFields/Fields/BlockingRadioenum/js/blockingradioenum.js"></script>
+<script src="modules/pat_Patients/custom2.js"></script>
 <link rel="stylesheet" href="custom/include/SugarFields/Fields/BlockingRadioenum/css/blockingradioenum.css">
 {if empty({{sugarvar key='value' string=true}})}
 {assign var="value" value={{sugarvar key='default_value' string=true}} }
