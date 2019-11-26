@@ -201,6 +201,8 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL13' => 'Identification',
   'LBL_ETAT' => 'Status',
   'LBL_GENRE' => 'Gender',
+  'LBL_AGE_MIN' => 'Age (minimum)',
+  'LBL_AGE_MAX' => 'Age (maximum)',
   'LBL_CONFLIT_INTERET_DETAIL' => 'Specify',
   'LBL_HELLO_CITY' => 'hello City',
   'LBL_HELLO_STATE' => 'hello State',
@@ -222,4 +224,5 @@ $mod_strings = array (
   'LBL_FORMATION_DATE' => 'Date de formation',
   'LBL_PREFERENCES_AUTRE' => 'Autres préférences',
   'LBL_DEPLACEMENTS' => 'Vous déplacer',
+  'LBL_TEST_INT_FIELD' => 'test int field',
 );

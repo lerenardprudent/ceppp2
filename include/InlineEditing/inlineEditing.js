@@ -696,6 +696,9 @@ function clickedawaysavehandler(e)
         } else {
           output_value_compare = $outer.find('option').map(function() { return $(this).val(); }).get().join('&');
         }
+      } else
+      if ( type == 'numeric' ) {
+        console.log("NUMERIC YA!");
       }
        else {
         output_value_compare = $(output_value).text();

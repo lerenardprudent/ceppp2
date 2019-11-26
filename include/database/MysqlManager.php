@@ -149,7 +149,8 @@ class MysqlManager extends DBManager
         'file' => 'varchar',
         'decimal_tpl' => 'decimal(%d, %d)',
         'SmartDropdown' => 'text',
-        'BlockingRadioenum' => 'varchar'
+        'BlockingRadioenum' => 'varchar',
+        'numeric' => 'int'
     );
 
     protected $capabilities = array(

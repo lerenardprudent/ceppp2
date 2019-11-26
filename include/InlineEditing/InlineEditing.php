@@ -343,7 +343,11 @@ function saveField($field, $id, $module, $value)
           }
           $value = implode('&', $value);
           $bean->$field = $value;
-        } else {
+        } elseif ($bean->field_defs[$field]['type'] == "numeric") {
+          $value = intval($value);
+          $bean->$field = $value;
+        }
+        else {
           $bean->$field = $value;
         }
 

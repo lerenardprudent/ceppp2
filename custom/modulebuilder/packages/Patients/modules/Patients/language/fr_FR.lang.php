@@ -189,6 +189,8 @@ $mod_strings = array (
   'LBL_CONSENTEMENT_MISEAJOUR' => 'Consentement sur la communication',
   'LBL_ETAT' => 'État',
   'LBL_GENRE' => 'Genre',
+  'LBL_AGE_MIN' => 'Age (minimum)',
+  'LBL_AGE_MAX' => 'Age (maximum)',
   'LBL_EDITVIEW_PANEL1' => 'Adresse',
   'LBL_EDITVIEW_PANEL2' => 'Informations socio-demographiques',
   'LBL_EDITVIEW_PANEL4' => 'Experience maladie - Proche aidant',
@@ -216,4 +218,5 @@ $mod_strings = array (
   'LBL_PREFERENCES_AUTRE' => 'Autres préférences',
   'LBL_DEPLACEMENTS' => 'Comment vous déplacez-vous ?',
   'LBL_EDITVIEW_PANEL14' => 'Perspective Patient',
+  'LBL_TEST_INT_FIELD' => 'test int field',
 );

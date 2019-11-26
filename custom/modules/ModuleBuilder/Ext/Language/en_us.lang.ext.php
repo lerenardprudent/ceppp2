@@ -4,5 +4,7 @@
 
 $mod_strings['fieldTypes']['BlockingRadioenum'] = 'Blocking Radioenum';
 
+$mod_strings['fieldTypes']['numeric'] = 'Numeric';
+
 $mod_strings['fieldTypes']['SmartDropdown'] = 'Smart Dropdown';
 ?>

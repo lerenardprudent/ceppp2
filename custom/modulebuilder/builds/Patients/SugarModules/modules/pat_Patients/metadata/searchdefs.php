@@ -15,6 +15,15 @@ array (
         'default' => true,
         'name' => 'genre',
       ),
+      'age' => 
+      array (
+        'type' => 'numeric',
+        'studio' => 'visible',
+        'label' => 'LBL_AGE_MIN',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'age_min',
+      ),
       'prob_sant_pa' => 
       array (
         'type' => 'SmartDropdown',

@@ -1864,6 +1864,37 @@ $vardefs = array (
       'options' => 'deplacement_list',
       'isMultiSelect' => true,
     ),
+    'test_int_field' => 
+    array (
+      'required' => false,
+      'name' => 'test_int_field',
+      'vname' => 'LBL_TEST_INT_FIELD',
+      'type' => 'int',
+      'massupdate' => 0,
+      'no_default' => false,
+      'comments' => '',
+      'help' => '',
+      'importable' => 'true',
+      'duplicate_merge' => 'disabled',
+      'duplicate_merge_dom_value' => '0',
+      'audited' => false,
+      'inline_edit' => true,
+      'reportable' => true,
+      'unified_search' => false,
+      'merge_filter' => 'disabled',
+      'len' => '255',
+      'size' => '20',
+      'enable_range_search' => false,
+      'disable_num_format' => '',
+      'min' => 10101,
+      'max' => 20202,
+      'validation' => 
+      array (
+        'type' => 'range',
+        'min' => 10101,
+        'max' => 20202,
+      ),
+    ),
   ),
   'relationships' => 
   array (
