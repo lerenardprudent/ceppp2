@@ -64,6 +64,7 @@ class pat_PatientsViewDetail extends ViewDetail
       if (in_array("recruteur", $roleNames) ) {
         $hidePanelScript .= "$(\"$patPerspPanelChildSelector\").closest('.panel').hide();";
       }
-      echo '<script>$(document).ready(function(){' . $hidePanelScript . '})</script>';
+      $hidePatPerspScript = '<script>$(document).ready(function(){' . $hidePanelScript . '})</script>';
+      // echo $hidePatPerspScript;
     }
 }

@@ -6,37 +6,23 @@ array (
   array (
     'basic_search' => 
     array (
-      'code_ident' => 
+      'genre' => 
       array (
-        'type' => 'varchar',
-        'label' => 'LBL_CODE_IDENT',
+        'type' => 'enum',
+        'studio' => 'visible',
+        'label' => 'LBL_GENRE',
         'width' => '10%',
         'default' => true,
-        'name' => 'code_ident',
+        'name' => 'genre',
       ),
-      'prenom' => 
+      'prob_sant_pa' => 
       array (
-        'type' => 'varchar',
-        'label' => 'LBL_PRENOM',
+        'type' => 'SmartDropdown',
+        'studio' => 'visible',
+        'label' => 'LBL_PROB_SANT_PA',
         'width' => '10%',
         'default' => true,
-        'name' => 'prenom',
-      ),
-      'nom' => 
-      array (
-        'type' => 'varchar',
-        'label' => 'LBL_NOM',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'nom',
-      ),
-      'centre_recrutement' => 
-      array (
-        'type' => 'varchar',
-        'label' => 'LBL_CENTRE_RECRUTEMENT',
-        'width' => '10%',
-        'default' => true,
-        'name' => 'centre_recrutement',
+        'name' => 'prob_sant_pa',
       ),
     ),
     'advanced_search' => 

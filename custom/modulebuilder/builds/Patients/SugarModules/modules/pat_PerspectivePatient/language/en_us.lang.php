@@ -99,4 +99,6 @@ $mod_strings = array (
   'LBL_PROFESSIONNELS_SANTE' => 'Healthcare professionals',
   'LBL_MALADIE_RARE_DETAILS' => 'Rare disease',
   'LBL_PRENEUR_DECISIONS' => 'Person making decisions',
+  'LBL_DETAILVIEW_PANEL1' => 'Address',
+  'LBL_DETAILVIEW_PANEL4' => 'Experience with Illness - Patient Partner',
 );

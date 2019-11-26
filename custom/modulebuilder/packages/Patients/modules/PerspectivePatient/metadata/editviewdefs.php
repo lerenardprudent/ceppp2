@@ -39,6 +39,7 @@ array (
           'panelDefault' => 'expanded',
         ),
       ),
+      'syncDetailEditViews' => true,
     ),
     'panels' => 
     array (
