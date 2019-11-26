@@ -376,12 +376,13 @@ $dictionary['pat_Patients'] = array(
     'duplicate_merge' => 'disabled',
     'duplicate_merge_dom_value' => '0',
     'audited' => false,
-    'inline_edit' => false,
+    'inline_edit' => '',
     'reportable' => true,
     'unified_search' => false,
     'merge_filter' => 'disabled',
-    'len' => '16',
+    'len' => '13',
     'size' => '20',
+    'help' => '',
   ),
   'doul_chron' => 
   array (

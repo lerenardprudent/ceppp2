@@ -66,6 +66,7 @@ class pat_PatientsViewEdit extends ViewEdit
       parent::preDisplay();
       if ( !isset($this->bean->id) ) {
         $this->bean->code_ident = $this->generate_patient_id();
+        $foo = 1;
       }
     }
     
