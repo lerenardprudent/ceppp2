@@ -1390,31 +1390,41 @@ class SearchForm
                                 break;
                             case 'greater_than_equals':
                               if ( $type == "numeric") {
+                                $op = ">=";
+                                $rhs = $field_value;
                                 $dbfldinfo = $this->seed->field_defs[$parms['db_field'][0]];
-                                $dbn = $dbfldinfo['name'];
-                                $dbt = $dbfldinfo['type'];
-                                $foo = 1;
+                                $dbfldname = $dbfldinfo['name'];
+                                $dbfldtype = $dbfldinfo['type'];
+                                $lhs = $dbfldname;
+                                if ( $dbfldtype == "date" ) {
+                                  $lhs = "(DATEDIFF(curdate(), $dbfldname) / 365)";
+                                }
+                                $where .= "($lhs $op $rhs)";
                               } else {
                                 $field_value = $db->quoteType($type, $field_value);
-                              }
                                 $where .= "$db_field >= $field_value";
-                                
-                                break;
+                              }
+                              break;
                             case 'less_than':
                                 $field_value = $db->quoteType($type, $field_value);
                                 $where .= "$db_field < $field_value";
                                 break;
                             case 'less_than_equals':
                               if ( $type == "numeric") {
+                                $op = "<=";
+                                $rhs = $field_value;
                                 $dbfldinfo = $this->seed->field_defs[$parms['db_field'][0]];
-                                $dbn = $dbfldinfo['name'];
-                                $dbt = $dbfldinfo['type'];
-                                $foo = 1;
-                                
+                                $dbfldname = $dbfldinfo['name'];
+                                $dbfldtype = $dbfldinfo['type'];
+                                $lhs = $dbfldname;
+                                if ( $dbfldtype == "date" ) {
+                                  $lhs = "(DATEDIFF(curdate(), $dbfldname) / 365)";
+                                }
+                                $where .= "($lhs $op $rhs)";
                               } else {
                                 $field_value = $db->quoteType($type, $field_value);
-                              }
                                 $where .= "$db_field <= $field_value";
+                              }
                                 break;
                             case 'next_7_days':
                             case 'last_7_days':
