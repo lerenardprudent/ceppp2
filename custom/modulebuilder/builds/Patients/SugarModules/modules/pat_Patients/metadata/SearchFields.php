@@ -122,6 +122,16 @@ $searchFields[$module_name] = array(
       'query_type' => 'default',
       'operator' => 'less_than_equals',
       'db_field' => [ 'naissance_perso' ]
-    )
+    ),
+    'prob_sant_pa' => [
+      'query_type' => 'format',
+      'operator' => 'subquery',
+      'subquery' => 'SELECT p1.id FROM
+                      pat_patients p1
+                      JOIN `pat_patients_pat_perspectivepatient_c` p2 ON p1.id = p2.pat_patients_pat_perspectivepatientpat_patients_ida
+                      JOIN pat_perspectivepatient pers ON p2.pat_patients_pat_perspectivepatientpat_perspectivepatient_idb = pers.id
+                      WHERE pers.prob_sant REGEXP REPLACE("{0}", "&", ".*")',
+      'db_field' => [ 'id' ]
+    ]
     //Range Search Support
 );
