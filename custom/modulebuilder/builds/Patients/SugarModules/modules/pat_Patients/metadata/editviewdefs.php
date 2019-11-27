@@ -96,10 +96,17 @@ array (
           array (
             'name' => 'code_ident',
             'label' => 'LBL_CODE_IDENT',
-              //'type' => 'readonly'
           ),
         ),
         1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'naissance_perso',
+            'label' => 'LBL_NAISSANCE_PERSO',
+          ),
+        ),
+        2 => 
         array (
           0 => 
           array (
@@ -108,7 +115,7 @@ array (
             'label' => 'LBL_GENRE',
           ),
         ),
-        2 => 
+        3 => 
         array (
           0 => 
           array (
@@ -117,7 +124,7 @@ array (
             'label' => 'LBL_ETAT',
           ),
         ),
-        3 => 
+        4 => 
         array (
           0 => 
           array (
@@ -217,20 +224,12 @@ array (
         array (
           0 => 
           array (
-            'name' => 'naissance_perso',
-            'label' => 'LBL_NAISSANCE_PERSO',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
             'name' => 'emploi_perso',
             'studio' => 'visible',
             'label' => 'LBL_EMPLOI_PERSO',
           ),
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -244,7 +243,7 @@ array (
             'label' => 'LBL_EDUCATION_PERSO_AUTRE',
           ),
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (

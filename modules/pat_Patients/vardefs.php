@@ -226,7 +226,7 @@ $dictionary['pat_Patients'] = array(
   ),
   'naissance_perso' => 
   array (
-    'required' => false,
+    'required' => true,
     'name' => 'naissance_perso',
     'vname' => 'LBL_NAISSANCE_PERSO',
     'type' => 'date',
@@ -244,6 +244,7 @@ $dictionary['pat_Patients'] = array(
     'merge_filter' => 'disabled',
     'size' => '20',
     'enable_range_search' => false,
+    'help' => '',
   ),
   'emploi_perso' => 
   array (
@@ -1554,7 +1555,7 @@ $dictionary['pat_Patients'] = array(
   ),
   'genre' => 
   array (
-    'required' => false,
+    'required' => true,
     'name' => 'genre',
     'vname' => 'LBL_GENRE',
     'type' => 'enum',
@@ -1575,6 +1576,7 @@ $dictionary['pat_Patients'] = array(
     'options' => 'genre_list',
     'studio' => 'visible',
     'dependency' => false,
+    'help' => '',
   ),
   'conflit_interet_detail' => 
   array (

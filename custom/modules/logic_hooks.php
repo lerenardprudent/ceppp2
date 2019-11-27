@@ -18,6 +18,7 @@ $hook_array['after_save'][] = Array(4, 'Initiate Preferences', 'modules/pat_Pati
 
 $hook_array['after_login'] = Array(); 
 $hook_array['after_login'][] = Array(1, 'Record login date/time', 'modules/Users/User_Hooks.php','User_Hooks', 'recordLoginDateTime');
+$hook_array['after_login'][] = Array(2, 'Redirect patient to their Perspective entry', 'modules/pat_PerspectivePatient/PerspectivePatient_Hooks.php','PerspectivePatient_Hooks', 'homeRedirect');
 $hook_array['before_logout'][] = Array(1, 'Record logout date/time', 'modules/Users/User_Hooks.php','User_Hooks', 'recordLogoutDateTime');
 
 /*$hook_array['after_save'][] = Array(1, 'AOD Index Changes', 'modules/AOD_Index/AOD_LogicHooks.php','AOD_LogicHooks', 'saveModuleChanges'); 

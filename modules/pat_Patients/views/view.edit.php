@@ -66,17 +66,19 @@ class pat_PatientsViewEdit extends ViewEdit
       parent::preDisplay();
       if ( !isset($this->bean->id) ) {
         $this->bean->code_ident = $this->generate_patient_id();
-        $foo = 1;
       }
     }
     
     function generate_patient_id() {
+      global $app_strings;
+      
       $datestamp = (new DateTime("now", new DateTimeZone('America/Montreal')))->format('Ymd');
       $rand = $this->genRandDigSeq(4);
-      $codeIdent = $datestamp . "_" . $rand;
+      $sep = $app_strings['USERNAME_PASSWORD_SEPARATOR'];
+      $codeIdent = $datestamp . $sep . $rand;
       while ( $this->patientAlreadyExists("code_ident='$codeIdent'") ) { // Check if user with same code already exists
         $rand = $this->genRandDigSeq(4);
-        $codeIdent = $datestamp . "_" . $rand;
+        $codeIdent = $datestamp . $sep . $rand;
       }
       return $codeIdent;
     }
@@ -92,7 +94,7 @@ class pat_PatientsViewEdit extends ViewEdit
       $query = "SELECT 1 from pat_patients where $where AND deleted=0";
       $db = DBManagerFactory::getInstance();
       $result = $db->query($query, true, "");
-      return $result->num_rows != 0;
+      return mysqli_num_rows($result) != 0;
     }
     
     public function display()

@@ -48,12 +48,15 @@ class Patients_Hook {
   }
   
   function create_patient_access($bean, $event, $arguments) {
+    global $app_strings;
+    
     if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
       $db = DBManagerFactory::getInstance();
       $id = $this->quote($this->gen_uuid());
       $code = $bean->code_ident;
       $uname = $this->quote($code);
-      $pwd = $code;
+      $dob = $bean->naissance_perso;
+      $pwd = $code . $app_strings['USERNAME_PASSWORD_SEPARATOR'] . substr($dob, 0, 4);
       $hash = $this->quote(md5($pwd));
       $last_name = $this->quote($code);
       $false = $this->quote(0);
