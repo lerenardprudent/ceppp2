@@ -139,6 +139,7 @@ class Sugar_Smarty extends Smarty
         global $app_strings;
         global $mod_strings;
         global $sugar_config;
+        global $current_user;
 
         /// Try and fetch the tpl from the theme folder
         /// if the tpl exists in the theme folder then set the resource_name to the tpl in the theme folder.
@@ -157,6 +158,9 @@ class Sugar_Smarty extends Smarty
         $this->assign('APP', $app_strings);
         $this->assign('MOD', $mod_strings);
         $this->assign('APP_CONFIG', $sugar_config);
+        
+        /* HACK dmarg 20191128 */
+        $this->assign('USER_IS_ADMIN', $current_user->is_admin == "1" ? 1 : 0);
 
         if (!(isset($sugar_config['developerMode']) && $sugar_config['developerMode'])) {
             $level = isset($sugar_config['smarty_error_level']) ? $sugar_config['smarty_error_level'] : 0;

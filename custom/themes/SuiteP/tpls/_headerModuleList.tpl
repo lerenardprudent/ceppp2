@@ -693,7 +693,7 @@
                     </button>
                     <div id="alerts" class="dropdown-menu" role="menu">{$APP.LBL_EMAIL_ERROR_VIEW_RAW_SOURCE}</div>
                 </li>
-                <li id="globalLinks" class="dropdown nav navbar-nav globalLinks-desktop">
+                <li id="globalLinks" class="dropdown nav navbar-nav globalLinks-desktop" data-user-is-admin="{$USER_IS_ADMIN}">
                     <button id="with-label" class="dropdown-toggle user-menu-button" title="{$CURRENT_USER}"data-toggle="dropdown" aria-expanded="true">
                         <span class="suitepicon suitepicon-action-current-user"></span>
                         <span>{$CURRENT_USER}</span>
