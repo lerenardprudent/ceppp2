@@ -700,7 +700,10 @@
                         <span class="suitepicon suitepicon-action-caret"></span>
                     </button>
                     <ul class="dropdown-menu user-dropdown user-menu" role="menu" aria-labelledby="with-label">
-                        <li role="presentation">
+                        {*
+                         * Hide Profile link from patient users who have logged in to modify their Patient Perspective details
+                         *}
+                        <li role="presentation" {if $MODULE_TAB == 'pat_PerspectivePatient' && $CURRENT_USER|regex_replace:"/[0-9\-]/":"" == ""}style="display:none"{/if} >
                             <a href='index.php?module=Users&action=EditView&record={$CURRENT_USER_ID}'>
                                 {$APP.LBL_PROFILE}
                             </a>
