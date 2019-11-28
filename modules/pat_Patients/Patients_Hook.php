@@ -111,8 +111,17 @@ class Patients_Hook {
         $id = $this->quote($this->gen_uuid());
         $queryRole = "INSERT INTO acl_roles_users(id, role_id, user_id, date_modified, deleted) VALUES ($id, $patientRoleId, $patUserId, $now, $false)";
         $res = $db->query($queryRole);
-        $foo = 1;
+        
+        $sgppQuery = "SELECT * FROM securitygroups where name = 'PatPerspective'";
+        $secGrpPatPersp = $db->getOne($sgppQuery);
+        if ( $secGrpPatPersp ) {
+          $secGrpPatPersp = $this->quote($secGrpPatPersp);
+          $id = $this->quote($this->gen_uuid());
+          $querySgpp = "INSERT INTO securitygroups_users(id, date_modified, securitygroup_id, user_id) VALUES ($id, $now,  $secGrpPatPersp, $patUserId)";
+          $res = $db->query($querySgpp);
+        }
       }
+      
       $GLOBALS['log']->debug("Assigning patient access rights: $querySec");
     }
   }
@@ -148,6 +157,16 @@ class Patients_Hook {
       $linkQuery .= "VALUES ($id, $false, $now, $patId, $patPersId)";
       $res = $db->query($linkQuery);
       $GLOBALS['log']->debug("Creating patient perspective");
+      
+      $sgppQuery = "SELECT * FROM securitygroups where name = 'PatPerspective'";
+      $secGrpPatPersp = $db->getOne($sgppQuery);
+      if ( $secGrpPatPersp ) {
+        $secGrpPatPersp = $this->quote($secGrpPatPersp);
+        $id = $this->quote($this->gen_uuid());
+        $patpersrecQuery = "INSERT INTO securitygroups_records(id, securitygroup_id, record_id, module, date_modified) ";
+        $patpersrecQuery .= "VALUES ($id, $secGrpPatPersp, $patPersId, 'pat_PerspectivePatient', $now)";
+        $res = $db->query($patpersrecQuery);
+      }
     }
   }
   
@@ -170,7 +189,6 @@ class Patients_Hook {
         $query .= " VALUES ($id, $categ, $false, $now, $now, $patUserId, $contents)";
         $res = $db->query($query);
         $GLOBALS['log']->debug("Init pref: ". $res ? "OK" : "FAILED");
-        $foo = 1;
       }
     }
   }
