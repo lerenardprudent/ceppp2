@@ -138,7 +138,7 @@ class Patients_Hook {
         $patUserId = $this->quote($patUserId);
         $patPersId = $this->quote($this->gen_uuid());
         $name = $this->quote("Perspective patient de $code");
-        $createPatPersQuery = "INSERT INTO pat_perspectivepatient(id, name, date_entered, date_modified, deleted, assigned_user_id) VALUES ($patPersId, $name, $now, $now, $false, $patUserId)";
+        $createPatPersQuery = "INSERT INTO pat_perspectivepatient(id, name, date_entered, date_modified, deleted, modified_user_id, assigned_user_id) VALUES ($patPersId, $name, $now, $now, $false, $patUserId, $currUserId)";
         $res = $db->query($createPatPersQuery);
       }
 
