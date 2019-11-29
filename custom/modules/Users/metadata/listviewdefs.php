@@ -21,13 +21,6 @@ array (
     'link' => true,
     'default' => true,
   ),
-  'SECURITYGROUP_PRIMARY_GROUP' => 
-  array (
-    'type' => 'bool',
-    'label' => 'LBL_PRIMARY_GROUP',
-    'width' => '10%',
-    'default' => true,
-  ),
   'TITLE' => 
   array (
     'width' => '15%',
@@ -35,12 +28,11 @@ array (
     'link' => true,
     'default' => true,
   ),
-  'EMAIL1' => 
+  'PHONE_MOBILE' => 
   array (
-    'width' => '30%',
-    'sortable' => false,
-    'label' => 'LBL_LIST_EMAIL',
-    'link' => true,
+    'type' => 'phone',
+    'label' => 'LBL_MOBILE_PHONE',
+    'width' => '10%',
     'default' => true,
   ),
   'IS_GROUP' => 
@@ -71,10 +63,25 @@ array (
     'link' => false,
     'default' => false,
   ),
+  'SECURITYGROUP_PRIMARY_GROUP' => 
+  array (
+    'type' => 'bool',
+    'label' => 'LBL_PRIMARY_GROUP',
+    'width' => '10%',
+    'default' => false,
+  ),
   'PHONE_WORK' => 
   array (
     'width' => '25%',
     'label' => 'LBL_LIST_PHONE',
+    'link' => true,
+    'default' => false,
+  ),
+  'EMAIL1' => 
+  array (
+    'width' => '30%',
+    'sortable' => false,
+    'label' => 'LBL_LIST_EMAIL',
     'link' => true,
     'default' => false,
   ),

@@ -64,7 +64,8 @@ class Patients_Hook {
       $status = $this->quote("Active");
       $empty = $this->quote("");
       $now = "NOW()";
-      $query = "INSERT INTO users (id, user_name, user_hash, system_generated_password, last_name, modified_user_id, created_by, status, deleted, employee_status, reports_to_id, is_group, factor_auth, date_entered, date_modified) VALUES ($id, $uname, $hash, $false, $uname, $true, $true, $status, $false, $status, $empty, $false, $false, $now, $now)";
+      $lblPatient = "'Patient'";
+      $query = "INSERT INTO users (id, user_name, user_hash, system_generated_password, last_name, first_name, title, modified_user_id, created_by, status, deleted, employee_status, reports_to_id, is_group, factor_auth, date_entered, date_modified) VALUES ($id, $uname, $hash, $false, $uname, $lblPatient, $lblPatient, $true, $true, $status, $false, $status, $empty, $false, $false, $now, $now)";
       $res = $db->query($query);
       $GLOBALS['log']->debug("Creating patient access: $query");
     }
