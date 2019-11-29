@@ -101,15 +101,29 @@ array (
         array (
           0 => 
           array (
+            'name' => 'is_recruiter_c',
+            'label' => 'LBL_IS_RECRUITER',
+          ),
+          1 => 
+          array (
+            'name' => 'etab_recrutement_c',
+            'studio' => 'visible',
+            'label' => 'LBL_ETAB_RECRUTEMENT',
+          ),
+        ),
+        6 => 
+        array (
+          0 => 
+          array (
             'name' => 'date_last_login_c',
             'label' => 'LBL_DATE_LAST_LOGIN',
-            'type' => 'readonly'
+            'type' => 'readonly',
           ),
           1 => 
           array (
             'name' => 'date_last_logout_c',
             'label' => 'LBL_DATE_LAST_LOGOUT',
-            'type' => 'readonly'
+            'type' => 'readonly',
           ),
         ),
       ),

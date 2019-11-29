@@ -1,10 +1,16 @@
 <?php
 $viewdefs ['Users'] = 
 array (
-  'EditView' => 
+  'DetailView' => 
   array (
     'templateMeta' => 
     array (
+      'form' => 
+      array (
+        'buttons' => 
+        array (
+        ),
+      ),
       'maxColumns' => '2',
       'widths' => 
       array (
@@ -18,11 +24,6 @@ array (
           'label' => '10',
           'field' => '30',
         ),
-      ),
-      'form' => 
-      array (
-        'headerTpl' => 'modules/Users/tpls/EditViewHeader.tpl',
-        'footerTpl' => 'modules/Users/tpls/EditViewFooter.tpl',
       ),
       'useTabs' => false,
       'tabDefs' => 
@@ -40,41 +41,48 @@ array (
       ),
       'syncDetailEditViews' => true,
     ),
+    'useTabs' => true,
+    'tabDefs' => 
+    array (
+      'LBL_USER_INFORMATION' => 
+      array (
+        'newTab' => true,
+        'panelDefault' => 'expanded',
+      ),
+      'LBL_EMPLOYEE_INFORMATION' => 
+      array (
+        'newTab' => true,
+        'panelDefault' => 'expanded',
+      ),
+    ),
     'panels' => 
     array (
       'LBL_USER_INFORMATION' => 
       array (
         0 => 
         array (
-          0 => 
+          0 => 'user_name',
+          1 => 
           array (
-            'name' => 'user_name',
-            'displayParams' => 
-            array (
-              'required' => true,
-            ),
+            'name' => 'first_name',
+            'label' => 'LBL_FIRST_NAME',
           ),
-          1 => 'first_name',
         ),
         1 => 
         array (
-          0 => 
+          0 => 'status',
+          1 => 
           array (
-            'name' => 'status',
-            'customCode' => '{if $IS_ADMIN}@@FIELD@@{else}{$STATUS_READONLY}{/if}',
-            'displayParams' => 
-            array (
-              'required' => true,
-            ),
+            'name' => 'last_name',
+            'label' => 'LBL_LAST_NAME',
           ),
-          1 => 'last_name',
         ),
         2 => 
         array (
           0 => 
           array (
             'name' => 'UserType',
-            'customCode' => '{if $IS_ADMIN}{$USER_TYPE_DROPDOWN}{else}{$USER_TYPE_READONLY}{/if}',
+            'customCode' => '{$USER_TYPE_READONLY}',
           ),
         ),
         3 => 
@@ -93,15 +101,11 @@ array (
         array (
           0 => 
           array (
-            'name' => 'is_recruiter_c',
-            'label' => 'LBL_IS_RECRUITER',
-          ),
-          1 => 
-          array (
             'name' => 'etab_recrutement_c',
             'studio' => 'visible',
             'label' => 'LBL_ETAB_RECRUTEMENT',
           ),
+          1 => '',
         ),
         6 => 
         array (
@@ -123,38 +127,22 @@ array (
       array (
         0 => 
         array (
-          0 => 
-          array (
-            'name' => 'employee_status',
-            'customCode' => '{if $IS_ADMIN}@@FIELD@@{else}{$EMPLOYEE_STATUS_READONLY}{/if}',
-          ),
+          0 => 'employee_status',
           1 => 'show_on_employees',
         ),
         1 => 
         array (
-          0 => 
-          array (
-            'name' => 'title',
-            'customCode' => '{if $IS_ADMIN}@@FIELD@@{else}{$TITLE_READONLY}{/if}',
-          ),
+          0 => 'title',
           1 => 'phone_work',
         ),
         2 => 
         array (
-          0 => 
-          array (
-            'name' => 'department',
-            'customCode' => '{if $IS_ADMIN}@@FIELD@@{else}{$DEPT_READONLY}{/if}',
-          ),
+          0 => 'department',
           1 => 'phone_mobile',
         ),
         3 => 
         array (
-          0 => 
-          array (
-            'name' => 'reports_to_name',
-            'customCode' => '{if $IS_ADMIN}@@FIELD@@{else}{$REPORTS_TO_READONLY}{/if}',
-          ),
+          0 => 'reports_to_name',
           1 => 'phone_other',
         ),
         4 => 

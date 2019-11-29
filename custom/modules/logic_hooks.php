@@ -8,6 +8,7 @@ $hook_array['before_save'] = Array();
 //$hook_array['before_save'][] = Array(2, 'Assign Patient ID', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'assign_patient_id'); 
 $hook_array['before_save'][] = Array(2, 'Update First Name field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'update_default_name_fields'); 
 $hook_array['before_save'][] = Array(3, 'Set Security Group Field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'set_security_group_field'); 
+$hook_array['before_save'][] = Array(4, 'Add Recruiter Title', 'modules/Users/User_Hooks.php', 'User_Hooks', 'addRecruiterTitle');
 $hook_array['process_record'] = Array(); 
 $hook_array['process_record'][] = Array(1, 'Test for catching database error', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'catch_db_error'); 
 $hook_array['after_save'] = Array(); 
@@ -15,6 +16,7 @@ $hook_array['after_save'][] = Array(1, 'Create Patient user', 'modules/pat_Patie
 $hook_array['after_save'][] = Array(2, 'Assign role and sec group to Patient user', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'assign_patient_access_rights'); 
 $hook_array['after_save'][] = Array(3, 'Create PerspectivePatient', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'create_patient_perspective'); 
 $hook_array['after_save'][] = Array(4, 'Initiate Preferences', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'initiate_patient_preferences'); 
+$hook_array['after_save'][] = Array(5, 'Add Recruiter to Sec Group and Assign Recruiter Role', 'modules/Users/User_Hooks.php','User_Hooks', 'handleNewRecruiter');
 
 $hook_array['after_login'] = Array(); 
 $hook_array['after_login'][] = Array(1, 'Record login date/time', 'modules/Users/User_Hooks.php','User_Hooks', 'recordLoginDateTime');

@@ -81,8 +81,7 @@ $fields_array['User'] = array(
         ,'employee_status'
         ,'messenger_id'
         ,'messenger_type'
-        ,'is_group'
-
+        ,'is_group',
     ),
     'list_fields' => array(
         'full_name',

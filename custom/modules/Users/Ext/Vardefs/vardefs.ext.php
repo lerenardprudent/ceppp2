@@ -47,4 +47,16 @@ $dictionary['User']['fields']['date_last_logout_c']['inline_edit']='';
 $dictionary['User']['fields']['date_last_logout_c']['labelValue']='LBL_DATE_LAST_LOGOUT';
 
  
+
+ // created: 2019-11-29 14:52:49
+$dictionary['User']['fields']['etab_recrutement_c']['inline_edit']='1';
+$dictionary['User']['fields']['etab_recrutement_c']['labelValue']='etab recrutement';
+
+ 
+
+ // created: 2019-11-29 15:03:28
+$dictionary['User']['fields']['is_recruiter_c']['inline_edit']='1';
+$dictionary['User']['fields']['is_recruiter_c']['labelValue']='is recruiter';
+
+ 
 ?>
