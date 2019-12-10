@@ -898,6 +898,9 @@ class SearchForm
             // a generic search form validation mechanism.
             $type = (!empty($this->seed->field_name_map[$field]['type'])) ? $this->seed->field_name_map[$field]['type'] : '';
             
+            if ( in_array($field, ["exp_illn_keyw"]) ) {
+              $foo = 1;
+            }
             /* HACK DMARG 2019-11-26 */
             if ( empty($type) ) {
               $layout = $this->searchdefs['layout'];

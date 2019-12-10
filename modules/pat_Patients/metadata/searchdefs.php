@@ -42,6 +42,16 @@ array (
         'default' => true,
         'name' => 'prob_sant_pa',
       ),
+      
+      'exp_illn_keyw' => 
+      array (
+        'type' => 'varchar',
+        'studio' => 'visible',
+        'label' => 'LBL_EXP_W_ILLNESS_KEYW',
+        'width' => '10%',
+        'default' => true,
+        'name' => 'exp_illn_keyw',
+      )
     ),
     'advanced_search' => 
     array (

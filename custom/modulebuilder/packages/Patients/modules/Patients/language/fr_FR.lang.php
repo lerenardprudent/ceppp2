@@ -191,6 +191,7 @@ $mod_strings = array (
   'LBL_GENRE' => 'Genre',
   'LBL_AGE_MIN' => 'Age (minimum)',
   'LBL_AGE_MAX' => 'Age (maximum)',
+  'LBL_EXP_W_ILLNESS_KEYW' => 'Mot-clé dans Expérience maladie',
   'LBL_EDITVIEW_PANEL1' => 'Adresse',
   'LBL_EDITVIEW_PANEL2' => 'Informations socio-demographiques',
   'LBL_EDITVIEW_PANEL4' => 'Experience maladie - Proche aidant',

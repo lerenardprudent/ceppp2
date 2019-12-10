@@ -203,6 +203,7 @@ $mod_strings = array (
   'LBL_GENRE' => 'Gender',
   'LBL_AGE_MIN' => 'Age (minimum)',
   'LBL_AGE_MAX' => 'Age (maximum)',
+  'LBL_EXP_W_ILLNESS_KEYW' => 'Keyword within Experience with Illness',
   'LBL_CONFLIT_INTERET_DETAIL' => 'Specify',
   'LBL_HELLO_CITY' => 'hello City',
   'LBL_HELLO_STATE' => 'hello State',
