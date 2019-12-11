@@ -898,12 +898,15 @@ class SearchForm
             // a generic search form validation mechanism.
             $type = (!empty($this->seed->field_name_map[$field]['type'])) ? $this->seed->field_name_map[$field]['type'] : '';
             
+            /* HACK DMARG 2019-12-11
+             * To populate a db table with list key-val pairs
+             */
             if ( in_array($field, ["exp_illn_keyw"]) ) {
               global $app_list_strings, $current_user, $current_language;
               $db = DBManagerFactory::getInstance();
               $listPfxs = [ 'cim10' ];
               $lang = substr($current_language, 0, 2);
-              $active = true;
+              $active = false;
               if ( $active ) {
                 foreach ( $listPfxs as $listPfx ) {
                   $tblName = "${listPfx}_list";
