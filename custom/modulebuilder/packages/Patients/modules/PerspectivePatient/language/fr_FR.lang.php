@@ -96,4 +96,11 @@ $mod_strings = array (
   'LBL_PROFESSIONNELS_SANTE' => 'Professionnels de la santé',
   'LBL_MALADIE_RARE_DETAILS' => 'Maladie rare',
   'LBL_PRENEUR_DECISIONS' => 'Preneur de décisions',
+  'LBL_EXPERIENCE_MALADIE_PA' => 'Experience as a caregiver',
+  'LBL_EXPERIENCE_MALADIE_PROCHE' => 'Experience with illness',
+  'LBL_REL_PATIENT' => ' Relationship to the patient',
+  'LBL_DOMAINE_SOIN_PA' => 'Healthcare areas of expertise',
+  'LBL_PROB_SANT_PA' => 'Health concerns',
+  'LBL_ETABL_SANTE_PA' => ' Principal healthcare establishment',
+  'LBL_ETABL_PREM_LIGNE_PA' => 'Secondary healthcare establishment',
 );
