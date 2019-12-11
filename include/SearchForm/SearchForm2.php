@@ -899,7 +899,33 @@ class SearchForm
             $type = (!empty($this->seed->field_name_map[$field]['type'])) ? $this->seed->field_name_map[$field]['type'] : '';
             
             if ( in_array($field, ["exp_illn_keyw"]) ) {
-              $foo = 1;
+              global $app_list_strings, $current_user, $current_language;
+              $db = DBManagerFactory::getInstance();
+              $listPfxs = [ 'cim10' ];
+              $lang = substr($current_language, 0, 2);
+              $active = true;
+              if ( $active ) {
+                foreach ( $listPfxs as $listPfx ) {
+                  $tblName = "${listPfx}_list";
+                  $list = $app_list_strings[$tblName];
+                  $it = new RecursiveIteratorIterator(new RecursiveArrayIterator($list));
+                  $insertsOK = 0;
+                  $insertsKO = 0;
+                  foreach ( $it as $k => $v ) {
+                    if ( preg_match( '/^[a-z_]+$/', $k) ) {
+                      //$sqlInsertQuery = "INSERT INTO $tblName (keystr, label_$lang) VALUES (\"$k\", \"$v\")";
+                      $sqlUpdateQuery = "UPDATE $tblName SET label_$lang = \"$v\" WHERE keystr = \"$k\"";
+                      $res = $db->query($sqlUpdateQuery);
+                      if ( $res ) {
+                        ++$insertsOK;
+                      } else {
+                        ++$insertsKO;
+                      }
+                    }
+                  }
+                  $foo = 1;
+                }
+              }
             }
             /* HACK DMARG 2019-11-26 */
             if ( empty($type) ) {

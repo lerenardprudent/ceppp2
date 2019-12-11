@@ -42,6 +42,15 @@ if (!defined('sugarEntry') || !sugarEntry) {
     die('Not A Valid Entry Point');
 }
 
+global $current_language;
+$lang = substr($current_language, 0, 2);
+
+$varToTable = [
+  "prob_sant" => "cim10_list",
+  "etabl_sante" => "etab_sante_list",
+  "etabl_prem_ligne" => "etab_sante_list",
+];
+
 $module_name = 'pat_Patients';
 $searchFields[$module_name] = array(
     'first_name' => array('query_type' => 'default'),
@@ -139,8 +148,10 @@ $searchFields[$module_name] = array(
       'subquery' => "SELECT p1.id FROM
                       pat_patients p1
                       JOIN `pat_patients_pat_perspectivepatient_c` p2 ON p1.id = p2.pat_patients_pat_perspectivepatientpat_patients_ida
-                      JOIN pat_perspectivepatient pers ON p2.pat_patients_pat_perspectivepatientpat_perspectivepatient_idb = pers.id
-                      WHERE " . implode(" OR ", array_map(function($fld) { return "pers.$fld LIKE '%{0}%'"; }, [ 'experience_maladie', 'med_1', 'professionnels_sante', 'maladie_rare_details', 'preneur_decisions' ])),
+                      JOIN pat_perspectivepatient pers ON p2.pat_patients_pat_perspectivepatientpat_perspectivepatient_idb = pers.id " .
+                      "LEFT JOIN " . implode(" LEFT JOIN ", array_map(function($var, $i) use ( $varToTable ) { $tbl = $varToTable[$var]; $tblAlias = "${tbl}_$i"; return  "$tbl $tblAlias ON pers.$var REGEXP CONCAT('&?', $tblAlias.keystr, '&?')"; }, array_keys($varToTable), range(1, count($varToTable)))) .
+                      "WHERE " . implode(" OR ", array_map(function($fld) { return "pers.$fld LIKE '%{0}%' "; }, [ 'experience_maladie', 'med_1', 'professionnels_sante', 'maladie_rare_details', 'preneur_decisions' ])) .
+                      "OR " . implode(" OR ", array_map(function($tbl, $i) use ($lang) { return "${tbl}_$i.label_$lang LIKE '%{0}%' "; }, $varToTable, range(1, count($varToTable)))),
         'db_field' => [ 'id' ]
       ]
     //Range Search Support

@@ -48,7 +48,7 @@ array (
         'type' => 'varchar',
         'studio' => 'visible',
         'label' => 'LBL_EXP_W_ILLNESS_KEYW',
-        'width' => '10%',
+        'width' => '40%',
         'default' => true,
         'name' => 'exp_illn_keyw',
       )
@@ -108,7 +108,7 @@ array (
     'maxColumnsBasic' => '4',
     'widths' => 
     array (
-      'label' => '10',
+      'label' => '30',
       'field' => '30',
     ),
   ),
