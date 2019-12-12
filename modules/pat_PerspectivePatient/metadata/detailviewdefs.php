@@ -274,15 +274,137 @@ array (
       array (
         0 => 
         array (
-          0 => '',
+          0 => 
+          array (
+            'name' => 'role_pp',
+            'label' => 'LBL_ROLE_PP',
+          ),
           1 => '',
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'descr_exp',
+            'label' => 'LBL_DESCR_EXP',
+          ),
+          1 => '',
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'formation_pp',
+            'studio' => 'visible',
+            'label' => 'LBL_FORMATION_PP',
+          ),
+          1 => 
+          array (
+            'name' => 'formation_oui',
+            'label' => 'LBL_FORMATION_OUI',
+          ),
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'formation_qui',
+            'label' => 'LBL_FORMATION_QUI',
+          ),
+          1 => 
+          array (
+            'name' => 'formation_date',
+            'label' => 'LBL_FORMATION_DATE',
+          ),
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'exp_sante',
+            'studio' => 'visible',
+            'label' => 'LBL_EXP_SANTE',
+          ),
+          1 => 
+          array (
+            'name' => 'exp_sante_detail',
+            'studio' => 'visible',
+            'label' => 'LBL_EXP_SANTE_DETAIL',
+          ),
         ),
       ),
       'lbl_editview_panel7' => 
       array (
         0 => 
         array (
-          0 => '',
+          0 => 
+          array (
+            'name' => 'membre_assoc_comite',
+            'studio' => 'visible',
+            'label' => 'LBL_MEMBRE_ASSOC_COMITE',
+          ),
+          1 => 
+          array (
+            'name' => 'membre_assoc_comite_detail',
+            'studio' => 'visible',
+            'label' => 'LBL_MEMBRE_ASSOC_COMITE_DETAIL',
+          ),
+        ),
+        1 => 
+        array (
+          0 => 
+          array (
+            'name' => 'conflit_interet',
+            'studio' => 'visible',
+            'label' => 'LBL_CONFLIT_INTERET',
+          ),
+          1 => 
+          array (
+            'name' => 'conflit_interet_detail',
+            'studio' => 'visible',
+            'label' => 'LBL_CONFLIT_INTERET_DETAIL',
+          ),
+        ),
+        2 => 
+        array (
+          0 => 
+          array (
+            'name' => 'motivations_implication',
+            'studio' => 'visible',
+            'label' => 'LBL_MOTIVATIONS_IMPLICATION',
+          ),
+          1 => '',
+        ),
+        3 => 
+        array (
+          0 => 
+          array (
+            'name' => 'disponibilites',
+            'label' => 'LBL_DISPONIBILITES',
+          ),
+          1 => '',
+        ),
+        4 => 
+        array (
+          0 => 
+          array (
+            'name' => 'preferences',
+            'label' => 'LBL_PREFERENCES',
+          ),
+          1 => 
+          array (
+            'name' => 'preferences_autre',
+            'studio' => 'visible',
+            'label' => 'LBL_PREFERENCES_AUTRE',
+          ),
+        ),
+        5 => 
+        array (
+          0 => 
+          array (
+            'name' => 'duree_experience',
+            'label' => 'LBL_DUREE_EXPERIENCE',
+          ),
           1 => '',
         ),
       ),
