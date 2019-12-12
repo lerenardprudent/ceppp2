@@ -211,7 +211,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE_PA',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -221,7 +220,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE_PROCHE',
           ),
-          1 => '',
         ),
         2 => 
         array (
@@ -231,7 +229,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_REL_PATIENT',
           ),
-          1 => '',
         ),
         3 => 
         array (
@@ -240,7 +237,6 @@ array (
             'name' => 'domaine_soin_pa',
             'label' => 'LBL_DOMAINE_SOIN_PA',
           ),
-          1 => '',
         ),
         4 => 
         array (
@@ -249,7 +245,6 @@ array (
             'name' => 'prob_sant_pa',
             'label' => 'LBL_PROB_SANT_PA',
           ),
-          1 => '',
         ),
         5 => 
         array (
@@ -258,7 +253,6 @@ array (
             'name' => 'etabl_sante_pa',
             'label' => 'LBL_ETABL_SANTE_PA',
           ),
-          1 => '',
         ),
         6 => 
         array (
@@ -267,7 +261,6 @@ array (
             'name' => 'etabl_prem_ligne_pa',
             'label' => 'LBL_ETABL_PREM_LIGNE_PA',
           ),
-          1 => '',
         ),
       ),
       'lbl_editview_panel5' => 
@@ -279,7 +272,6 @@ array (
             'name' => 'role_pp',
             'label' => 'LBL_ROLE_PP',
           ),
-          1 => '',
         ),
         1 => 
         array (
@@ -288,7 +280,6 @@ array (
             'name' => 'descr_exp',
             'label' => 'LBL_DESCR_EXP',
           ),
-          1 => '',
         ),
         2 => 
         array (
@@ -373,7 +364,6 @@ array (
             'studio' => 'visible',
             'label' => 'LBL_MOTIVATIONS_IMPLICATION',
           ),
-          1 => '',
         ),
         3 => 
         array (
@@ -382,7 +372,6 @@ array (
             'name' => 'disponibilites',
             'label' => 'LBL_DISPONIBILITES',
           ),
-          1 => '',
         ),
         4 => 
         array (
@@ -405,7 +394,6 @@ array (
             'name' => 'duree_experience',
             'label' => 'LBL_DUREE_EXPERIENCE',
           ),
-          1 => '',
         ),
       ),
     ),
