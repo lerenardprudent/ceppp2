@@ -1309,7 +1309,7 @@ $vardefs = array (
       'merge_filter' => 'disabled',
       'len' => 100,
       'size' => '20',
-      'options' => 'etablissement_recrut_list',
+      'options' => 'etabl_recrut_simpl_list',
       'studio' => 'visible',
       'dependency' => false,
     ),
