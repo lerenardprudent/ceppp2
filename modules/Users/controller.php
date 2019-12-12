@@ -44,7 +44,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 require_once("include/OutboundEmail/OutboundEmail.php");
 
-class UsersController extends SugarController //USERCONNECTIONLOGHACK
+class UsersController extends SugarController
 {
     /**
      * bug 48170
@@ -142,6 +142,15 @@ class UsersController extends SugarController //USERCONNECTIONLOGHACK
     protected function action_detailview()
     {
         $this->view = 'detail';
+        if (!(is_admin($GLOBALS['current_user']) || $_REQUEST['record'] == $GLOBALS['current_user']->id)) {
+            SugarApplication::redirect("index.php?module=Home&action=index");
+        }
+    }
+
+     //USERCONNECTIONLOGHACK
+    protected function action_hereWeGo()
+    {
+      $this->view = 'detail';
         if (!(is_admin($GLOBALS['current_user']) || $_REQUEST['record'] == $GLOBALS['current_user']->id)) {
             SugarApplication::redirect("index.php?module=Home&action=index");
         }
