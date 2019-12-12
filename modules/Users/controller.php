@@ -44,7 +44,7 @@ if (!defined('sugarEntry') || !sugarEntry) {
 
 require_once("include/OutboundEmail/OutboundEmail.php");
 
-class UsersController extends SugarController
+class UsersController extends SugarController //USERCONNECTIONLOGHACK
 {
     /**
      * bug 48170

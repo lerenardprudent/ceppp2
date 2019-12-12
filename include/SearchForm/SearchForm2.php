@@ -904,9 +904,10 @@ class SearchForm
             if ( in_array($field, ["exp_illn_keyw"]) ) {
               global $app_list_strings, $current_user, $current_language;
               $db = DBManagerFactory::getInstance();
-              $listPfxs = [ 'cim10' ];
+              $listPfxs = [ 'etabl_recrut_simpl' ];
               $lang = substr($current_language, 0, 2);
               $active = false;
+              $insert = true;
               if ( $active ) {
                 foreach ( $listPfxs as $listPfx ) {
                   $tblName = "${listPfx}_list";
@@ -916,9 +917,10 @@ class SearchForm
                   $insertsKO = 0;
                   foreach ( $it as $k => $v ) {
                     if ( preg_match( '/^[a-z_]+$/', $k) ) {
-                      //$sqlInsertQuery = "INSERT INTO $tblName (keystr, label_$lang) VALUES (\"$k\", \"$v\")";
+                      $sqlInsertQuery = "INSERT INTO $tblName (keystr, label_$lang) VALUES (\"$k\", \"$v\")";
                       $sqlUpdateQuery = "UPDATE $tblName SET label_$lang = \"$v\" WHERE keystr = \"$k\"";
-                      $res = $db->query($sqlUpdateQuery);
+                      $sqlQuery = $insert ? $sqlInsertQuery : $sqlUpdateQuery;
+                      $res = $db->query($sqlQuery);
                       if ( $res ) {
                         ++$insertsOK;
                       } else {

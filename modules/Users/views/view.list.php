@@ -53,8 +53,10 @@ class UsersViewList extends ViewList
         $this->lv = new ListViewSmarty();
         $this->lv->delete = false;
         $this->lv->email = false;
+        
+        //$this->lv->actionsMenuExtraItems[] = $this->buildMyMenuItem(); //USERCONNECTIONLOGHACK
     }
-
+    
     public function listViewProcess()
     {
         $this->processSearchForm();
@@ -74,5 +76,28 @@ class UsersViewList extends ViewList
             $savedSearchName = empty($_REQUEST['saved_search_select_name']) ? '' : (' - ' . $_REQUEST['saved_search_select_name']);
             echo $this->lv->display();
         }
+    }
+    
+    protected function buildMyMenuItem()
+    {
+        global $app_strings;
+    
+        return <<<EOHTML
+<a class="menuItem" style="width: 150px;" href="#" onmouseover='hiliteItem(this,"yes");' 
+        onmouseout='unhiliteItem(this);' 
+        onclick="sugarListView.get_checks();
+        if(sugarListView.get_checks_count() &lt; 1) {
+            alert('{$app_strings['LBL_LISTVIEW_NO_SELECTED']}');
+            return false;
+        }
+        document.MassUpdate.action.value='displaypassedids';
+        document.MassUpdate.submit();">Send records to a new view!</a>
+EOHTML;
+    }
+    
+    public function display()
+    {        
+      parent::display();
+      echo "<span>OH HAI</span>";
     }
 }
