@@ -995,5 +995,5 @@ Dernière tentative de connexion: ',
     'LBL_SEARCH_MODULES_HELP' => 'Choisissez quels modules doivent être inclus dans la recherche.',
     'LBL_ELASTIC_SEARCH_ENGINE' => 'Moteur Elasticsearch ',
     'LBL_SIMPLE_SQL_SEARCH_ENGINE' => 'Moteur de recherche SQL simple',
-    'LBL_CONNECTION_LOG_MENU_TITLE' => 'Journal de connexion'
+    'LBL_CONNECTION_LOG_MENU_TITLE' => 'Journal des accès'
 );
