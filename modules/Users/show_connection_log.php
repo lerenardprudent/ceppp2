@@ -20,7 +20,7 @@ if (!is_admin($current_user)) {
 }
 
 $xtpl = new XTemplate('modules/Users/show_connection_log.html');
-$en = false; // $lang == "en";
+$en = $lang == "en";
 
 $colon = $en ? ":" : ":";
 $today = date("Y-m-d");
