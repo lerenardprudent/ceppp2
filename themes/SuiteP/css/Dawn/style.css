@@ -12,6 +12,18 @@ div[type="radioenum"] > br {
 /* Put date input and calendar button on one line */
 div.edit-view-field[type="date"] > span.dateTime > input.date_input {
   width: 30%; }
+
+table[name="connection-table"] {
+  margin-top: 20px; }
+
+table[name="connection-table"] tr th, table[name="connection-table"] tr td {
+  border: 1px black solid;
+  padding: 3px; }
+
+input.datetimepicker {
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 10px; }
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
   font-family: sans-serif;

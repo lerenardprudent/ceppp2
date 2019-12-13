@@ -1,5 +1,57 @@
 <!-- BEGIN: main -->
-<form name="ConfigureSettings" id="EditView" method="POST" >
-  <span class="foobar">TESTING</span>
-  <span class="foobar">{FOOBAR}</span>
+
+<link rel="stylesheet" href="include/javascript/jquery/jquery.datetimepicker.min.css">
+<script type="text/javascript" src="include/javascript/jquery/jquery.datetimepicker.full.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".datetimepicker")
+      .datetimepicker({mask: '9999-19-39'})
+      .keyup(function() {
+        let disableBtn = false
+        $('.datetimepicker').each(function() {
+          if ( $(this).val().replace(/[^0-9]/g, "").length < 8 ) {
+            disableBtn = true
+          }
+        })
+        $('[name="generate-button"]').prop('disabled', disableBtn)
+      })      
+  })
+  
+  function generateUserConnectionLog() {
+      let users = [
+        { name: "fooey", type: "patient", login: "2019", logout: "2020" }
+      ]
+      $tbl = $('[name="connection-table"]')
+      $tbody = $tbl.find('tbody')
+      $tbody.find('tr').remove()
+      users.forEach(function(user) {
+        $tr = $("<tr>")
+        $tr.append($("<td>").append(user.name))
+        $tr.append($("<td>").append(user.type))
+        $tr.append($("<td>").append(user.login))
+        $tr.append($("<td>").append(user.logout))
+        $tbody.append($tr)
+      })
+    }
+</script>
+<h2>{CONNECTION_LOG_HEADING}</h2>
+<form name="ConnectionLog" id="EditView" method="POST" >
+  
+  <div>
+    <span>{FROM}</span><input type="text" class="datetimepicker" name="connect_from" value="{today}" />
+    <span>{TO}</span><input type="text" class="datetimepicker" name="connect_to" value="{today}" />
+    <button type="button" name="generate-button" onclick="generateUserConnectionLog()">{DISPLAY}</button>
+  </div>
+  <table name="connection-table">
+    <thead>
+      <tr>
+        <th>{USERNAME}</th>
+        <th>{USERTYPE}</th>
+        <th>{LOGIN_TIME}</th>
+        <th>{LOGOUT_TIME}</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
 </form>

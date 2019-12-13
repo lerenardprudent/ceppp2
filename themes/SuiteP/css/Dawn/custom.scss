@@ -9,3 +9,18 @@ div[type="radioenum"] > br {
 div.edit-view-field[type="date"] > span.dateTime > input.date_input {
   width: 30%;
 }
+
+table[name="connection-table"] {
+  margin-top: 20px;
+}
+
+table[name="connection-table"] tr th, table[name="connection-table"] tr td {
+  border: 1px black solid;
+  padding: 3px;
+}
+
+input.datetimepicker {
+  width: 90px;
+  margin-left: 5px;
+  margin-right: 10px;
+}
