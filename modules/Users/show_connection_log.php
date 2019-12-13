@@ -37,6 +37,7 @@ $xtpl->assign("LOGIN_TIME", $en ? "Login time" : "Heure de connexion");
 $xtpl->assign("LOGOUT_TIME", $en ? "Logout time" : "Heure de déconnexion");
 $xtpl->assign("admin_lbl", $en ? "administrator" : "administrateur");
 $xtpl->assign("patient_lbl", "patient");
+$xtpl->assign("recruiter_lbl", $en ? "recruiter" : "recruteur");
 
 $xtpl->parse("main");
 

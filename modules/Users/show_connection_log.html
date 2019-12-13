@@ -60,7 +60,7 @@
             $(this).append($sortArrow)
           })
           users.forEach(function(user) {
-            user['user_type'] = user.is_admin == '1' ? $tbl.data('adminLbl') : $tbl.data('patientLbl')
+            user['user_type'] = user.is_admin == '1' ? $tbl.data('adminLbl') : (user.is_patient ? $tbl.data('patientLbl') : $tbl.data('recruiterLbl'))
             
             $tr = $("<tr>")
             $tr.append($("<td class='username'>").append(user.user_name))
@@ -81,7 +81,7 @@
     <span>{TO}</span><input type="text" class="datetimepicker" name="connected_to" value="{to}" />
     <button type="button" name="generate-button" onclick="generateUserConnectionLog(event)">{DISPLAY}</button>
   </div>
-  <table name="connection-table" class="" data-admin-lbl="{admin_lbl}" data-patient-lbl="{patient_lbl}">
+  <table name="connection-table" class="" data-admin-lbl="{admin_lbl}" data-patient-lbl="{patient_lbl}" data-recruiter-lbl="{recruiter_lbl}">
     <thead>
       <tr>
         <th class='username'>{USERNAME}</th>
