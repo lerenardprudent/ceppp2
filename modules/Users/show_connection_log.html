@@ -5,32 +5,71 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $(".datetimepicker")
-      .datetimepicker({mask: '9999-19-39'})
+      .datetimepicker({
+        format: 'Y-m-d H:i',
+        mask: '9999-19-39 29:59'
+      })
       .keyup(function() {
         let disableBtn = false
         $('.datetimepicker').each(function() {
-          if ( $(this).val().replace(/[^0-9]/g, "").length < 8 ) {
+          if ( $(this).val().replace(/[^0-9]/g, "").length < 12 ) {
             disableBtn = true
           }
         })
         $('[name="generate-button"]').prop('disabled', disableBtn)
-      })      
+      })
+    $('th.sortable').click(generateUserConnectionLog)
   })
   
-  function generateUserConnectionLog() {
-      let users = [
-        { name: "fooey", type: "patient", login: "2019", logout: "2020" }
-      ]
+  function generateUserConnectionLog(event) {
       $tbl = $('[name="connection-table"]')
       $tbody = $tbl.find('tbody')
       $tbody.find('tr').remove()
-      users.forEach(function(user) {
-        $tr = $("<tr>")
-        $tr.append($("<td>").append(user.name))
-        $tr.append($("<td>").append(user.type))
-        $tr.append($("<td>").append(user.login))
-        $tr.append($("<td>").append(user.logout))
-        $tbody.append($tr)
+      
+      let data = $('input.datetimepicker').serialize()
+      if ( $(event.target).is('th.sortable') ) {
+        $th = $(event.target)
+        data += "&sort_col=" + $th.data('sort-col-id')
+        if ( $th.hasClass('sort-desc') ) {
+          data += "&sort_dir=asc";
+        } else
+        if ( $th.hasClass('sort-asc') ) {
+          data += "&sort_dir=desc";
+        }
+      }
+      $.ajax({
+        url: 'index.php?entryPoint=getConnectedUsersInfo',
+        data,
+        dataType: 'json',
+        success: function(data) {
+          console.log(data.sql)
+          let users = data.rows
+          let sortCol = data.sort_col
+          let sortDir = data.sort_dir
+          $tbl.find('.sortable').removeClass('sort-col sort-desc sort-asc')
+          $tbl.find('.sort-arrow').remove()
+          $tbl.find('th.sortable').each(function() {
+            let cssClasses = ["sort-arrow", "ui-icon"]
+            let triangleClass = "ui-icon-triangle-2-n-s"
+            if ( $(this).data('sortColId') == sortCol ) {
+              $(this).addClass('sort-col sort-' + sortDir)
+              triangleClass = sortDir == "asc" ? "ui-icon-triangle-1-n" : "ui-icon-triangle-1-s";
+            }
+            cssClasses.push(triangleClass)
+            $sortArrow = $("<span>").addClass(cssClasses.join(" "))
+            $(this).append($sortArrow)
+          })
+          users.forEach(function(user) {
+            user['user_type'] = user.is_admin == '1' ? $tbl.data('adminLbl') : $tbl.data('patientLbl')
+            
+            $tr = $("<tr>")
+            $tr.append($("<td class='username'>").append(user.user_name))
+            $tr.append($("<td class='usertype'>").append(user.user_type))
+            $tr.append($("<td class='datetime'>").append(user.login))
+            $tr.append($("<td class='datetime'>").append(user.logout))
+            $tbody.append($tr)
+          })
+        }
       })
     }
 </script>
@@ -38,17 +77,17 @@
 <form name="ConnectionLog" id="EditView" method="POST" >
   
   <div>
-    <span>{FROM}</span><input type="text" class="datetimepicker" name="connect_from" value="{today}" />
-    <span>{TO}</span><input type="text" class="datetimepicker" name="connect_to" value="{today}" />
-    <button type="button" name="generate-button" onclick="generateUserConnectionLog()">{DISPLAY}</button>
+    <span>{FROM}</span><input type="text" class="datetimepicker" name="connected_from" value="{from}" />
+    <span>{TO}</span><input type="text" class="datetimepicker" name="connected_to" value="{to}" />
+    <button type="button" name="generate-button" onclick="generateUserConnectionLog(event)">{DISPLAY}</button>
   </div>
-  <table name="connection-table">
+  <table name="connection-table" class="" data-admin-lbl="{admin_lbl}" data-patient-lbl="{patient_lbl}">
     <thead>
       <tr>
-        <th>{USERNAME}</th>
-        <th>{USERTYPE}</th>
-        <th>{LOGIN_TIME}</th>
-        <th>{LOGOUT_TIME}</th>
+        <th class='username'>{USERNAME}</th>
+        <th class='usertype'>{USERTYPE}</th>
+        <th class='datetime sortable' data-sort-col-id='date_last_login_c'>{LOGIN_TIME}</th>
+        <th class='datetime sortable' data-sort-col-id='date_last_logout_c'>{LOGOUT_TIME}</th>
       </tr>
     </thead>
     <tbody>

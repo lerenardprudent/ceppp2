@@ -11,16 +11,52 @@ div.edit-view-field[type="date"] > span.dateTime > input.date_input {
 }
 
 table[name="connection-table"] {
+  border: 1px black solid;
   margin-top: 20px;
 }
 
+table[name="connection-table"] tr th {
+  border-bottom: 1px black solid;
+}
+
 table[name="connection-table"] tr th, table[name="connection-table"] tr td {
-  border: 1px black solid;
   padding: 3px;
 }
 
+.fixed-header tbody{
+  display:block;
+  overflow:auto;
+  height:60px;
+  width:100%;
+}
+.fixed-header thead tr{
+  display:block;
+}
+
 input.datetimepicker {
-  width: 90px;
+  width: 120px;
   margin-left: 5px;
   margin-right: 10px;
+}
+
+th.username, td.username {
+  width: 160px;
+}
+
+th.usertype, td.usertype {
+  width: 120px;
+}
+
+th.datetime, td.datetime {
+  width: 160px;
+}
+
+th.datetime > span.ui-icon {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+th.sortable {
+  font-weight: bold;
+  cursor: pointer;
 }

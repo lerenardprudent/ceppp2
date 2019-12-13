@@ -121,11 +121,4 @@ class User_Hooks {
         mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff ), mt_rand( 0, 0xffff )
     );
   }
-  
-  function loadDateTimePicker($event)
-  {
-    //echo '<link rel="stylesheet" type="text/css" href="include/javascript/jquery/jquery.datetimepicker.min.css">';
-    //echo '<script type="text/javascript" src="include/javascript/jquery/jquery.js" />';
-    //echo '<script type="text/javascript" src="include/javascript/jquery/jquery.datetimepicker.full.js" />';
-  }
 }

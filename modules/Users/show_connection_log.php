@@ -19,24 +19,24 @@ if (!is_admin($current_user)) {
     sugar_die("Unauthorized access to administration.");
 }
 
-$xtpl=new XTemplate('modules/Users/show_connection_log.html');
+$xtpl = new XTemplate('modules/Users/show_connection_log.html');
+$en = false; // $lang == "en";
 
-$xtpl->assign("FOOBAR", "OH HAI!!!");
-$dtJsContents = file_get_contents('modules/Users/jquery.datetimepicker.full.js');
-$dtCssContents = file_get_contents('modules/Users/jquery.datetimepicker.full.css');
-$colon = $lang == "en" ? ":" : ":";
+$colon = $en ? ":" : ":";
 $today = date("Y-m-d");
-$xtpl->assign("DTJS", $dtJsContents);
-$xtpl->assign("DTCSS", $dtCssContents);
-$xtpl->assign("today", $today);
-$xtpl->assign("CONNECTION_LOG_HEADING", "CONNECTION LOG");
-$xtpl->assign("FROM", "From".$colon);
-$xtpl->assign("TO", "To".$colon);
-$xtpl->assign("DISPLAY", "Display");
-$xtpl->assign("USERNAME", "User name");
-$xtpl->assign("USERTYPE", "User type");
-$xtpl->assign("LOGIN_TIME", "Login time");
-$xtpl->assign("LOGOUT_TIME", "Logout time");
+
+$xtpl->assign("from", $today. " 00:00");
+$xtpl->assign("to", $today. " 23:00");
+$xtpl->assign("CONNECTION_LOG_HEADING", $en ? "CONNECTION LOG" : "JOURNAL DES ACCÈS");
+$xtpl->assign("FROM", ($en ? "From" : "De").$colon);
+$xtpl->assign("TO", ($en ? "To" : "À").$colon);
+$xtpl->assign("DISPLAY", $en ? "DISPLAY" : "AFFICHER");
+$xtpl->assign("USERNAME", $en ? "User name" : "Nom d'utilisateur");
+$xtpl->assign("USERTYPE", $en ? "User type" : "Type d'utilisateur");
+$xtpl->assign("LOGIN_TIME", $en ? "Login time" : "Heure de connexion");
+$xtpl->assign("LOGOUT_TIME", $en ? "Logout time" : "Heure de déconnexion");
+$xtpl->assign("admin_lbl", $en ? "administrator" : "administrateur");
+$xtpl->assign("patient_lbl", "patient");
 
 $xtpl->parse("main");
 
