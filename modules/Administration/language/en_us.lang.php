@@ -925,5 +925,5 @@ $mod_strings = array(
     'LBL_PWDSEC_SPECCHAR' => 'Password should contain special characters',
     'LBL_PWDSEC_SPECCHAR_DESC' => 'Password should contain special characters',
     'LBL_PWDSEC_CHARS' => 'Characters',
-
+    'LBL_CONNECTION_LOG_MENU_TITLE' => 'Connection Log'
 );

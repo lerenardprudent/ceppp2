@@ -73,5 +73,5 @@ if (is_admin($current_user)) {
     $module_menu[] = array("index.php?module=ACLRoles&action=index&return_module=SecurityGroups&return_action=ListView", $admin_mod_strings['LBL_MANAGE_ROLES_TITLE'], "Role_Management");
     $module_menu[] = array("index.php?module=SecurityGroups&action=config&return_module=SecurityGroups&return_action=ListView", $admin_mod_strings['LBL_CONFIG_SECURITYGROUPS_TITLE'], "Security_Suite_Settings");
     
-    $module_menu[] = array("index.php?module=User&action=hello2&return_module=Users&return_action=ListView", "OH HAI", "User_Connection_Log"); //USERCONNECTIONLOGHACK
+    $module_menu[] = array("index.php?module=Users&action=show_connection_log&return_module=Users&return_action=ListView", $admin_mod_strings['LBL_CONNECTION_LOG_MENU_TITLE'], "View_Process_Audit"); //USERCONNECTIONLOGHACK
 }
