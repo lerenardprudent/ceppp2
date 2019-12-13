@@ -45,8 +45,7 @@ class User_Hooks {
     
     $frStrsPath = str_replace('\\', '/', SUGAR_PATH . "/custom/Extension/application/Ext/Language/fr_FR.Patients.php");
     include $frStrsPath;
-    $etablRecr = $app_list_strings['etablissement_recrut_list'];
-    $test = $etablRecr['DCPP']['dcpp_cours_css'];
+    $etablRecr = $app_list_strings['etabl_recrut_simpl_list'];
     
     if ( $user->is_recruiter_c ) {
       $hasRecruiterRole = $db->getOne("SELECT * FROM acl_roles_users WHERE role_id = $recrRoleId AND user_id = $userId AND deleted = 0");

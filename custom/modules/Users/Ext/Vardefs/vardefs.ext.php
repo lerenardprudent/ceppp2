@@ -48,9 +48,9 @@ $dictionary['User']['fields']['date_last_logout_c']['labelValue']='LBL_DATE_LAST
 
  
 
- // created: 2019-11-29 14:52:49
+ // created: 2019-12-13 18:43:44
 $dictionary['User']['fields']['etab_recrutement_c']['inline_edit']='1';
-$dictionary['User']['fields']['etab_recrutement_c']['labelValue']='etab recrutement';
+$dictionary['User']['fields']['etab_recrutement_c']['labelValue']='Recruitement Institution';
 
  
 

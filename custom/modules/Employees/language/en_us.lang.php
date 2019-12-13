@@ -1,9 +1,9 @@
 <?php
-// created: 2019-11-29 15:03:28
+// created: 2019-12-13 18:43:44
 $mod_strings = array (
   'LBL_DATE_LAST_LOGIN' => 'LBL_DATE_LAST_LOGIN',
   'LBL_DATE_LAST_LOGOUT' => 'LBL_DATE_LAST_LOGOUT',
-  'LBL_ETAB_RECRUTEMENT' => 'etab recrutement',
+  'LBL_ETAB_RECRUTEMENT' => 'Recruitement Institution',
   'LBL_IS_RECRUTER' => 'is recruter',
   'LBL_IS_RECRUITER' => 'is recruiter',
 );
