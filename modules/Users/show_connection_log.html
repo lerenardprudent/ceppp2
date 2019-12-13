@@ -60,7 +60,7 @@
             $(this).append($sortArrow)
           })
           users.forEach(function(user) {
-            user['user_type'] = user.is_admin == '1' ? $tbl.data('adminLbl') : (user.is_patient ? $tbl.data('patientLbl') : $tbl.data('recruiterLbl'))
+            user['user_type'] = user.is_admin == '1' ? $tbl.data('adminLbl') : (user.is_patient == '1' ? $tbl.data('patientLbl') : $tbl.data('recruiterLbl'))
             
             $tr = $("<tr>")
             $tr.append($("<td class='username'>").append(user.user_name))
