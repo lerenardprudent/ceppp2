@@ -2,7 +2,7 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2019-12-13 11:25:14
+// created: 2019-12-17 15:15:52
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepatient"] = array (
   'name' => 'pat_patients_pat_perspectivepatient',
   'type' => 'link',
@@ -38,6 +38,19 @@ $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepat
   'reportable' => false,
   'side' => 'left',
   'vname' => 'LBL_PAT_PATIENTS_PAT_PERSPECTIVEPATIENT_FROM_PAT_PATIENTS_TITLE',
+);
+
+
+// created: 2019-12-17 15:15:53
+$dictionary["pat_PerspectivePatient"]["fields"]["pat_perspectivepatient_pat_experiencepatientpartenaire"] = array (
+  'name' => 'pat_perspectivepatient_pat_experiencepatientpartenaire',
+  'type' => 'link',
+  'relationship' => 'pat_perspectivepatient_pat_experiencepatientpartenaire',
+  'source' => 'non-db',
+  'module' => 'pat_ExperiencePatientPartenaire',
+  'bean_name' => 'pat_ExperiencePatientPartenaire',
+  'side' => 'right',
+  'vname' => 'LBL_PAT_PERSPECTIVEPATIENT_PAT_EXPERIENCEPATIENTPARTENAIRE_FROM_PAT_EXPERIENCEPATIENTPARTENAIRE_TITLE',
 );
 
 ?>

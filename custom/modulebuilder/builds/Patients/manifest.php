@@ -63,9 +63,9 @@ $manifest = array (
   'icon' => '',
   'is_uninstallable' => true,
   'name' => 'Patients',
-  'published_date' => '2019-12-13 16:25:13',
+  'published_date' => '2019-12-17 20:15:51',
   'type' => 'module',
-  'version' => 1576254313,
+  'version' => 1576613752,
   'remove_tables' => 'prompt',
 );
 
@@ -76,12 +76,19 @@ $installdefs = array (
   array (
     0 => 
     array (
+      'module' => 'pat_ExperiencePatientPartenaire',
+      'class' => 'pat_ExperiencePatientPartenaire',
+      'path' => 'modules/pat_ExperiencePatientPartenaire/pat_ExperiencePatientPartenaire.php',
+      'tab' => true,
+    ),
+    1 => 
+    array (
       'module' => 'pat_Patients',
       'class' => 'pat_Patients',
       'path' => 'modules/pat_Patients/pat_Patients.php',
       'tab' => true,
     ),
-    1 => 
+    2 => 
     array (
       'module' => 'pat_PerspectivePatient',
       'class' => 'pat_PerspectivePatient',
@@ -91,6 +98,11 @@ $installdefs = array (
   ),
   'layoutdefs' => 
   array (
+    0 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/layoutdefs/pat_perspectivepatient_pat_experiencepatientpartenaire_pat_PerspectivePatient.php',
+      'to_module' => 'pat_PerspectivePatient',
+    ),
   ),
   'relationships' => 
   array (
@@ -98,16 +110,25 @@ $installdefs = array (
     array (
       'meta_data' => '<basepath>/SugarModules/relationships/relationships/pat_patients_pat_perspectivepatientMetaData.php',
     ),
+    1 => 
+    array (
+      'meta_data' => '<basepath>/SugarModules/relationships/relationships/pat_perspectivepatient_pat_experiencepatientpartenaireMetaData.php',
+    ),
   ),
   'image_dir' => '<basepath>/icons',
   'copy' => 
   array (
     0 => 
     array (
+      'from' => '<basepath>/SugarModules/modules/pat_ExperiencePatientPartenaire',
+      'to' => 'modules/pat_ExperiencePatientPartenaire',
+    ),
+    1 => 
+    array (
       'from' => '<basepath>/SugarModules/modules/pat_Patients',
       'to' => 'modules/pat_Patients',
     ),
-    1 => 
+    2 => 
     array (
       'from' => '<basepath>/SugarModules/modules/pat_PerspectivePatient',
       'to' => 'modules/pat_PerspectivePatient',
@@ -141,11 +162,35 @@ $installdefs = array (
     ),
     4 => 
     array (
+      'from' => '<basepath>/SugarModules/relationships/language/pat_ExperiencePatientPartenaire.php',
+      'to_module' => 'pat_ExperiencePatientPartenaire',
+      'language' => 'en_us',
+    ),
+    5 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/language/pat_ExperiencePatientPartenaire.php',
+      'to_module' => 'pat_ExperiencePatientPartenaire',
+      'language' => 'fr_FR',
+    ),
+    6 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/language/pat_PerspectivePatient.php',
+      'to_module' => 'pat_PerspectivePatient',
+      'language' => 'en_us',
+    ),
+    7 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/language/pat_PerspectivePatient.php',
+      'to_module' => 'pat_PerspectivePatient',
+      'language' => 'fr_FR',
+    ),
+    8 => 
+    array (
       'from' => '<basepath>/SugarModules/language/application/en_us.lang.php',
       'to_module' => 'application',
       'language' => 'en_us',
     ),
-    5 => 
+    9 => 
     array (
       'from' => '<basepath>/SugarModules/language/application/fr_FR.lang.php',
       'to_module' => 'application',
@@ -164,10 +209,26 @@ $installdefs = array (
       'from' => '<basepath>/SugarModules/relationships/vardefs/pat_patients_pat_perspectivepatient_pat_Patients.php',
       'to_module' => 'pat_Patients',
     ),
+    2 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/vardefs/pat_perspectivepatient_pat_experiencepatientpartenaire_pat_ExperiencePatientPartenaire.php',
+      'to_module' => 'pat_ExperiencePatientPartenaire',
+    ),
+    3 => 
+    array (
+      'from' => '<basepath>/SugarModules/relationships/vardefs/pat_perspectivepatient_pat_experiencepatientpartenaire_pat_PerspectivePatient.php',
+      'to_module' => 'pat_PerspectivePatient',
+    ),
   ),
   'layoutfields' => 
   array (
     0 => 
+    array (
+      'additional_fields' => 
+      array (
+      ),
+    ),
+    1 => 
     array (
       'additional_fields' => 
       array (

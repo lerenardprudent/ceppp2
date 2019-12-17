@@ -9,6 +9,8 @@ $hook_array['before_save'] = Array();
 $hook_array['before_save'][] = Array(2, 'Update First Name field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'update_default_name_fields'); 
 $hook_array['before_save'][] = Array(3, 'Set Security Group Field', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'set_security_group_field'); 
 $hook_array['before_save'][] = Array(4, 'Add Recruiter Title', 'modules/Users/User_Hooks.php', 'User_Hooks', 'addRecruiterTitle');
+$hook_array['before_save'][] = Array(5, 'Save multiple Pat Persp experiences', 'modules/pat_PerspectivePatient/PerspectivePatient_Hooks.php','PerspectivePatient_Hooks', 'saveMultExperiences');
+
 $hook_array['process_record'] = Array(); 
 $hook_array['process_record'][] = Array(1, 'Test for catching database error', 'modules/pat_Patients/Patients_Hook.php','Patients_Hook', 'catch_db_error'); 
 $hook_array['after_save'] = Array(); 
