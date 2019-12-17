@@ -37,6 +37,7 @@ class User_Hooks {
   
   function handleNewRecruiter($user, $event)
   {
+    global $app_list_strings;
     $db = DBManagerFactory::getInstance();
     $recrRoleName = "Recruteur";
     $query = "SELECT * FROM acl_roles WHERE name = '$recrRoleName'";
@@ -54,38 +55,26 @@ class User_Hooks {
         $hasRecruiterRole = $db->query("INSERT INTO acl_roles_users (id, role_id, user_id, date_modified) VALUES($id, $recrRoleId, $userId, NOW())");
       } 
       
-      if ( $user->etab_recrutement_c ) {
-        $parentNode = null;
-        $node = null;
-        foreach ( $etablRecr as $k => $v ) {
-          if ( is_array($v) && isset($v[$user->etab_recrutement_c])) {
-            $parentNode = $k;
-            $node = $v[$user->etab_recrutement_c];
-            $recrSecGrpName = "Centre de recrutement - $parentNode - $node";
-            break;
-          }
+      if ( $user->etab_recrutement_c && $etablRecr[$user->etab_recrutement_c] ) {
+        $recrSecGrpName = self::quote("Centre de recrutement - " . $etablRecr[$user->etab_recrutement_c]);
+        $recrSecGrpId = $db->getOne("SELECT * from securitygroups WHERE name = $recrSecGrpName AND deleted = 0");
+        if ( !$recrSecGrpId ) {
+          // Must create sec group first
+          $recrSecGrpId = self::gen_uuid();
+          $res = $db->query("INSERT INTO securitygroups (id, name, date_entered, date_modified) VALUES (" . self::quote($recrSecGrpId) . ", $recrSecGrpName, NOW(), NOW())");
         }
-        if ( $recrSecGrpName ) {
-          $recrSecGrpName = self::quote($recrSecGrpName);
-          $recrSecGrpId = $db->getOne("SELECT * from securitygroups WHERE name = $recrSecGrpName AND deleted = 0");
-          if ( !$recrSecGrpId ) {
-            // Must create sec group first
-            $recrSecGrpId = self::gen_uuid();
-            $res = $db->query("INSERT INTO securitygroups (id, name, date_entered, date_modified) VALUES (" . self::quote($recrSecGrpId) . ", $recrSecGrpName, NOW(), NOW())");
-          }
-          
-          $currUserSecGrpId = $db->getOne("SELECT securitygroup_id from securitygroups_users WHERE user_id = $userId AND deleted = 0");
-          if ( $currUserSecGrpId && $currUserSecGrpId != $recrSecGrpId) {
-            // Delete prev sec group (whatever it is)
-            $currUserSecGrpId = false;
-            $res = $db->query("DELETE FROM securitygroups_users WHERE user_id = $userId");
-          }
-          
-          if ( !$currUserSecGrpId ) {
-            $userSecGrpId = self::quote(self::gen_uuid());
-            $recrSecGrpId = self::quote($recrSecGrpId);
-            $userInSecGrp = $db->query("INSERT INTO securitygroups_users (id, date_modified, securitygroup_id, user_id) VALUES ($userSecGrpId, NOW(), $recrSecGrpId, $userId)");
-          }
+
+        $currUserSecGrpId = $db->getOne("SELECT securitygroup_id from securitygroups_users WHERE user_id = $userId AND deleted = 0");
+        if ( $currUserSecGrpId && $currUserSecGrpId != $recrSecGrpId) {
+          // Delete prev sec group (whatever it is)
+          $currUserSecGrpId = false;
+          $res = $db->query("DELETE FROM securitygroups_users WHERE user_id = $userId");
+        }
+
+        if ( !$currUserSecGrpId ) {
+          $userSecGrpId = self::quote(self::gen_uuid());
+          $recrSecGrpId = self::quote($recrSecGrpId);
+          $userInSecGrp = $db->query("INSERT INTO securitygroups_users (id, date_modified, securitygroup_id, user_id) VALUES ($userSecGrpId, NOW(), $recrSecGrpId, $userId)");
         }
       } else {
         $foo = 1; // Remove recruitment security group
