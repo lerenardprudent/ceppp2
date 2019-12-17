@@ -2,7 +2,7 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2019-12-17 15:15:52
+// created: 2019-12-17 15:40:44
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepatient"] = array (
   'name' => 'pat_patients_pat_perspectivepatient',
   'type' => 'link',
@@ -41,7 +41,7 @@ $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepat
 );
 
 
-// created: 2019-12-17 15:15:53
+// created: 2019-12-17 15:40:45
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_perspectivepatient_pat_experiencepatientpartenaire"] = array (
   'name' => 'pat_perspectivepatient_pat_experiencepatientpartenaire',
   'type' => 'link',
