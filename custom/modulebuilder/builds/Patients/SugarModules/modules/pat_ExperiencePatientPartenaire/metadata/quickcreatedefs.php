@@ -37,6 +37,11 @@ array (
         0 => 
         array (
           0 => 'name',
+          1 => 
+          array (
+            'name' => 'role_experience',
+            'label' => 'LBL_ROLE_EXPERIENCE',
+          ),
         ),
       ),
     ),

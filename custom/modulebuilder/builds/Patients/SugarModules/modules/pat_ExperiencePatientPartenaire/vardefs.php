@@ -203,6 +203,7 @@ $dictionary['pat_ExperiencePatientPartenaire'] = array(
     'len' => '255',
     'size' => '20',
     'dbType' => 'varchar',
+    'options' => 'role_pp_list',
   ),
 ),
     'relationships' => array (
