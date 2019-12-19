@@ -42,9 +42,9 @@
  */
 
 $app_list_strings['moduleList']['pat_Partenariats'] = 'Partenariats';
+$app_list_strings['moduleList']['pat_CommentairesRecruteur'] = 'Commentaires recruteur';
 $app_list_strings['moduleList']['pat_ExperiencePatientPartenaire'] = 'Expérience patient partenaire';
 $app_list_strings['moduleList']['pat_Patients'] = 'Patients';
-$app_list_strings['moduleList']['pat_CommentairesRecruteur'] = 'Commentaires recruteur';
 $app_list_strings['moduleList']['pat_PerspectivePatient'] = 'Patient Perspective';
 $app_list_strings['emploi_temps_list']['nul'] = ' ';
 $app_list_strings['emploi_temps_list']['emploi'] = 'Employment';

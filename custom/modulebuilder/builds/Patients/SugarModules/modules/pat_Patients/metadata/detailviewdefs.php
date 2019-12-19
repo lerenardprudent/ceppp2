@@ -81,7 +81,7 @@ array (
         'LBL_EDITVIEW_PANEL15' => 
         array (
           'newTab' => false,
-          'panelDefault' => 'expanded',
+          'panelDefault' => 'collapsed',
         ),
       ),
       'syncDetailEditViews' => true,
