@@ -3,7 +3,8 @@ $(document).ready(function() {
   setTimeout(function() {
     removedLinks = false
     $('li.actionmenulinks > a[data-action-name="Add"], li.actionmenulinks > a[data-action-name="View"]').each(function() {
-      $(this).parent().remove()
+      let href = $(this).attr('href')
+      $(`a[href="${href}"]`).parent().remove()
       removedLinks = true
     })
     if ( removedLinks ) {
