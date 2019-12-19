@@ -66,5 +66,8 @@ class pat_PatientsViewDetail extends ViewDetail
       }
       $hidePatPerspScript = '<script>$(document).ready(function(){' . $hidePanelScript . '})</script>';
       // echo $hidePatPerspScript;
+      
+      $customJsFilePath = 'modules/pat_Patients/custom3.js';
+      echo "<script type='text/javascript' src='$customJsFilePath'>";
     }
 }
