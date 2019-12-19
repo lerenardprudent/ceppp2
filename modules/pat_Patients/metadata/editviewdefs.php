@@ -68,6 +68,11 @@ array (
           'newTab' => false,
           'panelDefault' => 'collapsed',
         ),
+        'LBL_EDITVIEW_PANEL15' => 
+        array (
+          'newTab' => false,
+          'panelDefault' => 'expanded',
+        ),
       ),
       'syncDetailEditViews' => true,
     ),
@@ -116,7 +121,6 @@ array (
             'name' => 'assigned_user_name',
             'label' => 'LBL_ASSIGNED_TO_NAME',
           ),
-          1 => '',
         ),
       ),
       'lbl_editview_panel12' => 
@@ -289,7 +293,6 @@ array (
             'name' => 'deplacements',
             'label' => 'LBL_DEPLACEMENTS',
           ),
-          1 => '',
         ),
         3 => 
         array (
@@ -368,7 +371,7 @@ array (
           ),
         ),
       ),
-      'lbl_editview_panel14' => 
+      /*'lbl_editview_panel14' => 
       array (
         0 => 
         array (
@@ -377,9 +380,20 @@ array (
             'name' => 'pat_patients_pat_perspectivepatient_name',
             'label' => 'LBL_PAT_PATIENTS_PAT_PERSPECTIVEPATIENT_FROM_PAT_PERSPECTIVEPATIENT_TITLE',
           ),
-          1 => '',
         ),
       ),
+      'lbl_editview_panel15' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            'name' => 'pat_patients_pat_commentairesrecruteur_name',
+            'label' => 'LBL_PAT_PATIENTS_PAT_COMMENTAIRESRECRUTEUR_FROM_PAT_COMMENTAIRESRECRUTEUR_TITLE',
+          ),
+          1 => '',
+        ),
+      ),*/
     ),
   ),
 );

@@ -171,6 +171,43 @@ class Patients_Hook {
     }
   }
   
+  function create_commentaires_recruteur($bean, $event, $arguments) {
+    if ( $bean->module_name == "pat_Patients" && $this->new_entry($bean) ) {
+      global $current_user;
+      $currUserId = $this->quote($current_user->id);
+      $db = DBManagerFactory::getInstance();
+      
+      
+      $false = $this->quote(0);
+      $now = "NOW()";
+      $code = $bean->code_ident;
+
+      $commentId = $this->quote($this->gen_uuid());
+      $name = $this->quote("Commentaires recruteur sur $code");
+      $createCommentQuery = "INSERT INTO pat_commentairesrecruteur(id, name, date_entered, date_modified, deleted, assigned_user_id) VALUES ($commentId, $name, $now, $now, $false, $currUserId)";
+      $res = $db->query($createCommentQuery);
+      
+      $id = $this->quote($this->gen_uuid());
+      $patId = $this->quote($bean->id);
+      $linkQuery = "INSERT INTO pat_patients_pat_commentairesrecruteur_c(id, deleted, date_modified, pat_patients_pat_commentairesrecruteurpat_patients_ida, pat_patien6159cruteur_idb) ";
+      $linkQuery .= "VALUES ($id, $false, $now, $patId, $commentId)";
+      $res = $db->query($linkQuery);
+      $GLOBALS['log']->debug("Creating commentaires recruteur");
+      
+      /*
+      $sgppQuery = "SELECT * FROM securitygroups where name = 'PatPerspective'";
+      $secGrpPatPersp = $db->getOne($sgppQuery);
+      if ( $secGrpPatPersp ) {
+        $secGrpPatPersp = $this->quote($secGrpPatPersp);
+        $id = $this->quote($this->gen_uuid());
+        $patpersrecQuery = "INSERT INTO securitygroups_records(id, securitygroup_id, record_id, module, date_modified) ";
+        $patpersrecQuery .= "VALUES ($id, $secGrpPatPersp, $patPersId, 'pat_PerspectivePatient', $now)";
+        $res = $db->query($patpersrecQuery);
+      }
+       */
+    }
+  }
+  
   function initiate_patient_preferences($bean, $event, $arguments) {
     $db = DBManagerFactory::getInstance();
     $code = $bean->code_ident;

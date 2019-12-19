@@ -51,4 +51,17 @@ $relationships = array (
     'from_studio' => false,
     'relationship_name' => 'pat_patients_pat_perspectivepatient',
   ),
+  'pat_patients_pat_commentairesrecruteur' => 
+  array (
+    'lhs_module' => 'pat_Patients',
+    'rhs_module' => 'pat_CommentairesRecruteur',
+    'relationship_type' => 'one-to-one',
+    'readonly' => false,
+    'deleted' => false,
+    'relationship_only' => false,
+    'for_activities' => false,
+    'is_custom' => false,
+    'from_studio' => false,
+    'relationship_name' => 'pat_patients_pat_commentairesrecruteur',
+  ),
 );

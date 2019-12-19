@@ -226,4 +226,5 @@ $mod_strings = array (
   'LBL_PREFERENCES_AUTRE' => 'Autres préférences',
   'LBL_DEPLACEMENTS' => 'Vous déplacer',
   'LBL_TEST_INT_FIELD' => 'test int field',
+  'LBL_EDITVIEW_PANEL15' => 'Commentaires recruteur',
 );

@@ -10,6 +10,9 @@ $moduleList[] = 'ent_Entrevues';
 
  
  //WARNING: The contents of this file are auto-generated
+$beanList['pat_CommentairesRecruteur'] = 'pat_CommentairesRecruteur';
+$beanFiles['pat_CommentairesRecruteur'] = 'modules/pat_CommentairesRecruteur/pat_CommentairesRecruteur.php';
+$moduleList[] = 'pat_CommentairesRecruteur';
 $beanList['pat_ExperiencePatientPartenaire'] = 'pat_ExperiencePatientPartenaire';
 $beanFiles['pat_ExperiencePatientPartenaire'] = 'modules/pat_ExperiencePatientPartenaire/pat_ExperiencePatientPartenaire.php';
 $moduleList[] = 'pat_ExperiencePatientPartenaire';
