@@ -220,4 +220,5 @@ $mod_strings = array (
   'LBL_DEPLACEMENTS' => 'Comment vous déplacez-vous ?',
   'LBL_EDITVIEW_PANEL14' => 'Perspective Patient',
   'LBL_TEST_INT_FIELD' => 'test int field',
+  'LBL_EDITVIEW_PANEL15' => 'Commentaires recruteur',
 );
