@@ -359,7 +359,6 @@ $app_list_strings = array(
         'Mr.' => 'M.',
         'Ms.' => 'Mme',
         'Mx.' => 'Mx.',
-        'Miss' => 'Mlle',
         'Dr.' => 'Dr.',
         'Prof.' => 'Prof.'
     ),
