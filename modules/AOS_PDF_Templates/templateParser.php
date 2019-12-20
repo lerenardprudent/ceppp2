@@ -51,13 +51,20 @@ class templateParser
 
     public function parse_template_bean($string, $key, &$focus)
     {
-        global $app_strings, $sugar_config;
+        global $app_strings, $sugar_config, $app_list_strings;
         $repl_arr = array();
         $isValidator = new SuiteValidator();
+        $nullVal = "--";
 
         foreach ($focus->field_defs as $field_def) {
             if (isset($field_def['name']) && $field_def['name'] != '') {
                 $fieldName = $field_def['name'];
+                
+                if ( empty($focus->$fieldName)) {
+                  $repl_arr[$key . "_" . $fieldName] = $nullVal;
+                  continue;
+                }
+                
                 if ($field_def['type'] == 'currency') {
                     $repl_arr[$key . "_" . $fieldName] = currency_format_number($focus->$fieldName, $params = array('currency_symbol' => false));
                 } elseif (($field_def['type'] == 'radioenum' || $field_def['type'] == 'enum' || $field_def['type'] == 'dynamicenum') && isset($field_def['options'])) {
@@ -95,8 +102,25 @@ class templateParser
                         $link = $secureLink;
                         $repl_arr[$key . "_" . $fieldName] = '<img src="' . $link . '" width="'.$field_def['width'].'" height="'.$field_def['height'].'"/>';
                     }
+                } elseif ( $field_def['type'] == 'SmartDropdown') {
+                  if ( $focus->{$field_def['name']} ) {
+                    $optionsListName = $field_def['options'];
+                    $options = $app_list_strings[$optionsListName];
+                    $flattenedOptions = [];
+                    array_walk_recursive($options, function($item, $key) use (&$flattenedOptions) {
+                      if ( $key ) {
+                        $flattenedOptions[$key] = $item;
+                      }
+                    });
+                    $full_strs = [];
+                    foreach ( explode('&', $focus->{$field_def['name']}) as $val ) {
+                      $full_strs[] = $flattenedOptions[$val];
+                    }
+                    $repl_arr[$key . "_" . $fieldName] = implode(', ', $full_strs);
+                  }
+                  
                 } else {
-                    $repl_arr[$key . "_" . $fieldName] = $focus->$fieldName;
+                  $repl_arr[$key . "_" . $fieldName] = $focus->$fieldName;
                 }
             }
         } // end foreach()

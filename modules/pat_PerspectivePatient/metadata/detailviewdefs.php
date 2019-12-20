@@ -1,6 +1,5 @@
 <?php
 $module_name = 'pat_PerspectivePatient';
-
 $viewdefs [$module_name] = 
 array (
   'DetailView' => 
@@ -15,7 +14,10 @@ array (
           1 => 'DUPLICATE',
           2 => 'DELETE',
           3 => 'FIND_DUPLICATES',
-          4 => [ 'customCode' => '<input type="button" class="button" onClick="printAsPDF(\'pdf\')" value="{$MOD.LBL_PRINT_AS_PDF}">' ]
+          4 => 
+          array (
+            'customCode' => '<input type="button" class="button" onClick="printAsPDF(\'pdf\')" value="{$MOD.LBL_PRINT_AS_PDF}">',
+          ),
         ),
       ),
       'maxColumns' => '2',
@@ -120,22 +122,13 @@ array (
         array (
           0 => 
           array (
-            'name' => 'pat_patients_pat_perspectivepatient_name',
-            'label' => 'LBL_PAT_PATIENTS_PAT_PERSPECTIVEPATIENT_FROM_PAT_PATIENTS_TITLE',
-          ),
-          1 => '',
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
             'name' => 'experience_maladie',
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE',
           ),
           1 => '',
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -144,7 +137,7 @@ array (
           ),
           1 => '',
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -159,7 +152,7 @@ array (
             'label' => 'LBL_MALADIE_RARE_DETAILS',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -169,7 +162,7 @@ array (
           ),
           1 => '',
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -178,7 +171,7 @@ array (
           ),
           1 => '',
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -187,7 +180,7 @@ array (
           ),
           1 => '',
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -202,7 +195,7 @@ array (
             'label' => 'LBL_PRENEUR_DECISIONS',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (

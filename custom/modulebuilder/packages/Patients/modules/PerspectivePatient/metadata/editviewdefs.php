@@ -108,22 +108,13 @@ array (
         array (
           0 => 
           array (
-            'name' => 'pat_patients_pat_perspectivepatient_name',
-            'label' => 'LBL_PAT_PATIENTS_PAT_PERSPECTIVEPATIENT_FROM_PAT_PATIENTS_TITLE',
-          ),
-          1 => '',
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
             'name' => 'experience_maladie',
             'studio' => 'visible',
             'label' => 'LBL_EXPERIENCE_MALADIE',
           ),
           1 => '',
         ),
-        2 => 
+        1 => 
         array (
           0 => 
           array (
@@ -132,7 +123,7 @@ array (
           ),
           1 => '',
         ),
-        3 => 
+        2 => 
         array (
           0 => 
           array (
@@ -147,7 +138,7 @@ array (
             'label' => 'LBL_MALADIE_RARE_DETAILS',
           ),
         ),
-        4 => 
+        3 => 
         array (
           0 => 
           array (
@@ -157,7 +148,7 @@ array (
           ),
           1 => '',
         ),
-        5 => 
+        4 => 
         array (
           0 => 
           array (
@@ -166,7 +157,7 @@ array (
           ),
           1 => '',
         ),
-        6 => 
+        5 => 
         array (
           0 => 
           array (
@@ -175,7 +166,7 @@ array (
           ),
           1 => '',
         ),
-        7 => 
+        6 => 
         array (
           0 => 
           array (
@@ -190,7 +181,7 @@ array (
             'label' => 'LBL_PRENEUR_DECISIONS',
           ),
         ),
-        8 => 
+        7 => 
         array (
           0 => 
           array (
