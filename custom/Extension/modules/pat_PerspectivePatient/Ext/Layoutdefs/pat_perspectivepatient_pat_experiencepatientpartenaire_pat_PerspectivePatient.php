@@ -1,5 +1,5 @@
 <?php
- // created: 2019-12-20 11:15:51
+ // created: 2019-12-20 13:14:37
 $layout_defs["pat_PerspectivePatient"]["subpanel_setup"]['pat_perspectivepatient_pat_experiencepatientpartenaire'] = array (
   'order' => 100,
   'module' => 'pat_ExperiencePatientPartenaire',

@@ -129,4 +129,5 @@ $mod_strings = array (
   'LBL_PREFERENCES' => 'Preferences',
   'LBL_PREFERENCES_AUTRE' => 'Other information about preferences?',
   'LBL_DUREE_EXPERIENCE' => 'Amount of experience (Years / Months)',
+  'LBL_PRINT_AS_PDF' => 'Print as PDF',
 );

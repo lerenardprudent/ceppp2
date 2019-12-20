@@ -3108,6 +3108,7 @@ $app_list_strings['pdf_template_type_dom']['AOS_Contracts'] = 'Contrats';
 $app_list_strings['pdf_template_type_dom']['Accounts'] = 'Comptes';
 $app_list_strings['pdf_template_type_dom']['Contacts'] = 'Contacts';
 $app_list_strings['pdf_template_type_dom']['Leads'] = 'Prospects';
+$app_list_strings['pdf_template_type_dom']['pat_PerspectivePatient'] = 'PerspectivePatient';
 $app_list_strings['pdf_template_sample_dom'][''] = '';
 $app_list_strings['contract_status_list']['Not Started'] = 'Non démarré';
 $app_list_strings['contract_status_list']['In Progress'] = 'En cours';

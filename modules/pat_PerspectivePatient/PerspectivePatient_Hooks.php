@@ -30,11 +30,4 @@ class PerspectivePatient_Hooks {
       }
     }
   }
-  
-  function saveMultExperiences($bean, $event, $args) {
-    if ( $bean->module_name == "pat_PerspectivePatient") {
-      $foo = 1;
-    }
-  }
-
 }
