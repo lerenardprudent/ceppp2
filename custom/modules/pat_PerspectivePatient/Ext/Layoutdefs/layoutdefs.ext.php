@@ -2,7 +2,7 @@
  //WARNING: The contents of this file are auto-generated
 
 
- // created: 2019-12-20 13:14:37
+ // created: 2019-12-20 16:11:22
 $layout_defs["pat_PerspectivePatient"]["subpanel_setup"]['pat_perspectivepatient_pat_experiencepatientpartenaire'] = array (
   'order' => 100,
   'module' => 'pat_ExperiencePatientPartenaire',

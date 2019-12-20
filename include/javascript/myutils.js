@@ -10,3 +10,15 @@ function removeCreateModifyActionLinks() {
     console.log("Removed create/view links")
   }
 }
+
+function generatePDF(event)
+{
+  var form=document.getElementById('popupForm')
+  $templId = $('.template-id')
+  if(form!=null && $templId.length){
+    form.templateID.value=$templId.text()
+    form.submit()
+  } else{
+    alert('Error!')
+  }
+}
