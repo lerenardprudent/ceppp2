@@ -52,6 +52,7 @@ class pat_PerspectivePatientViewDetail extends ViewDetail
       parent::display();
 
       $customJsFilePath = 'modules/pat_PerspectivePatient/custom2.js';
-      echo "<script type='text/javascript' src='$customJsFilePath'>";
+      echo "<script type='text/javascript' src='include/javascript/myutils.js'></script>";
+      echo "<script type='text/javascript' src='$customJsFilePath'></script>";
     }
 }

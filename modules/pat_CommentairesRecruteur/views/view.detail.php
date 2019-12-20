@@ -52,6 +52,7 @@ class pat_CommentairesRecruteurViewDetail extends ViewDetail
       parent::display();
 
       $customJsFilePath = 'modules/pat_CommentairesRecruteur/custom.js';
-      echo "<script type='text/javascript' src='$customJsFilePath'>";
+      echo "<script type='text/javascript' src='include/javascript/myutils.js'></script>";
+      echo "<script type='text/javascript' src='$customJsFilePath'></script>";
     }
 }
