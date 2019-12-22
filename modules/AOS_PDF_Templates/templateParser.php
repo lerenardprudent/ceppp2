@@ -125,6 +125,33 @@ class templateParser
             }
         } // end foreach()
 
+        /* HACK DMARG 2019-12-21
+         * Look for related Experiences
+         */
+        
+        $html = preg_match('/EXPÉRIENCE PARTENARIAT.+?(?=<table)(.+?(?=<\/table)<\/table>)/', $string, $match);
+        if ( $match ) {
+          $expTblTemplHtml = $match[1];
+          preg_match_all('/\$[a-zA-Z_]+/', $expTblTemplHtml, $varMatches);
+          $db = DBManagerFactory::getInstance();
+          $sql = "SELECT pe.* FROM `pat_perspectivepatient_pat_experiencepatientpartenaire_c` p1
+                  JOIN pat_experiencepatientpartenaire pe ON p1.pat_perspe53b3patient_ida = '" . $focus->id .
+                  "' AND p1.pat_perspe7214tenaire_idb = pe.id";
+          $result = $db->query($sql);
+          $expTblsHtml = [];
+          while ( $row = $db->fetchByAssoc($result) ) {
+            $freshTblHtml = $expTblTemplHtml;
+            foreach ( $varMatches[0] as $var ) {
+              $varName = substr($var, 1);
+              $freshTblHtml = str_replace($var, isset($row[$varName]) ? trim($row[$varName]) : $nullVal, $freshTblHtml);
+            }
+            $expTblsHtml[] = $freshTblHtml;
+          }
+          $replHtml = !empty($expTblsHtml) ? implode("<br>", $expTblsHtml) : "<br>";
+          $string = str_replace($expTblTemplHtml, $replHtml, $string);
+        }
+        
+        
         krsort($repl_arr);
         reset($repl_arr);
 
