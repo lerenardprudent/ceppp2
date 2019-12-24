@@ -82,4 +82,5 @@ $mod_strings = array (
   'LBL_ROLE_EXPERIENCE' => 'Rôle',
   'LBL_COMITE' => 'Comité / Groupe',
   'LBL_DUREE' => 'Durée',
+  'LBL_EDITVIEW_PANEL3' => 'Renseignements sur l&#039;expérience',
 );
