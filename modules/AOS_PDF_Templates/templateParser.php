@@ -54,7 +54,7 @@ class templateParser
         global $app_strings, $sugar_config, $app_list_strings;
         $repl_arr = array();
         $isValidator = new SuiteValidator();
-        $nullVal = "--";
+        $nullVal = "&ndash;";
 
         foreach ($focus->field_defs as $field_def) {
             if (isset($field_def['name']) && $field_def['name'] != '') {
@@ -143,7 +143,8 @@ class templateParser
             $freshTblHtml = $expTblTemplHtml;
             foreach ( $varMatches[0] as $var ) {
               $varName = substr($var, 1);
-              $freshTblHtml = str_replace($var, isset($row[$varName]) ? trim($row[$varName]) : $nullVal, $freshTblHtml);
+              $regex = "/\\\$${varName}/";
+              $freshTblHtml = preg_replace($regex, isset($row[$varName]) ? trim($row[$varName]) : $nullVal, $freshTblHtml, 1);
             }
             $expTblsHtml[] = $freshTblHtml;
           }
