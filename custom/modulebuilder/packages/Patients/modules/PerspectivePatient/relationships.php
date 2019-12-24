@@ -40,7 +40,7 @@
 $relationships = array (
   'pat_perspectivepatient_pat_experiencepatientpartenaire' => 
   array (
-    'rhs_label' => 'Expérience d&#039;implication',
+    'rhs_label' => 'Expérience(s) d&#039;implication à titre de patient partenaire',
     'lhs_label' => 'Patient Perspective',
     'rhs_subpanel' => 'default',
     'lhs_module' => 'pat_PerspectivePatient',
