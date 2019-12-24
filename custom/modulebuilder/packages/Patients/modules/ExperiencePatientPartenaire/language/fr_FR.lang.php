@@ -80,4 +80,6 @@ $mod_strings = array (
   'LBL_FORMATION_QUI' => 'Formation par qui',
   'LBL_DATE_FORMATION' => 'Date de formation',
   'LBL_ROLE_EXPERIENCE' => 'Rôle',
+  'LBL_COMITE' => 'Comité / Groupe',
+  'LBL_DUREE' => 'Durée',
 );

@@ -57,11 +57,6 @@ array (
           'newTab' => false,
           'panelDefault' => 'collapsed',
         ),
-        'LBL_EDITVIEW_PANEL5' => 
-        array (
-          'newTab' => false,
-          'panelDefault' => 'collapsed',
-        ),
         'LBL_EDITVIEW_PANEL7' => 
         array (
           'newTab' => false,
@@ -264,67 +259,6 @@ array (
           array (
             'name' => 'etabl_prem_ligne_pa',
             'label' => 'LBL_ETABL_PREM_LIGNE_PA',
-          ),
-        ),
-      ),
-      'lbl_editview_panel5' => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            'name' => 'role_pp',
-            'label' => 'LBL_ROLE_PP',
-          ),
-        ),
-        1 => 
-        array (
-          0 => 
-          array (
-            'name' => 'descr_exp',
-            'label' => 'LBL_DESCR_EXP',
-          ),
-        ),
-        2 => 
-        array (
-          0 => 
-          array (
-            'name' => 'formation_pp',
-            'studio' => 'visible',
-            'label' => 'LBL_FORMATION_PP',
-          ),
-          1 => 
-          array (
-            'name' => 'formation_oui',
-            'label' => 'LBL_FORMATION_OUI',
-          ),
-        ),
-        3 => 
-        array (
-          0 => 
-          array (
-            'name' => 'formation_qui',
-            'label' => 'LBL_FORMATION_QUI',
-          ),
-          1 => 
-          array (
-            'name' => 'formation_date',
-            'label' => 'LBL_FORMATION_DATE',
-          ),
-        ),
-        4 => 
-        array (
-          0 => 
-          array (
-            'name' => 'exp_sante',
-            'studio' => 'visible',
-            'label' => 'LBL_EXP_SANTE',
-          ),
-          1 => 
-          array (
-            'name' => 'exp_sante_detail',
-            'studio' => 'visible',
-            'label' => 'LBL_EXP_SANTE_DETAIL',
           ),
         ),
       ),

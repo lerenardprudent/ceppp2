@@ -65,27 +65,16 @@ array (
         array (
           0 => 
           array (
-            'name' => 'formation_suivie',
-            'studio' => 'visible',
-            'label' => 'LBL_FORMATION_SUIVIE',
-          ),
-          1 => 
-          array (
-            'name' => 'nom_formation_suivie',
-            'label' => 'LBL_NOM_FORMATION_SUIVIE',
+            'name' => 'comite',
+            'label' => 'LBL_COMITE',
           ),
         ),
         5 => 
         array (
           0 => 
           array (
-            'name' => 'formation_qui',
-            'label' => 'LBL_FORMATION_QUI',
-          ),
-          1 => 
-          array (
-            'name' => 'date_formation',
-            'label' => 'LBL_DATE_FORMATION',
+            'name' => 'duree',
+            'label' => 'LBL_DUREE',
           ),
         ),
       ),

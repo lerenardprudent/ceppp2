@@ -54,8 +54,45 @@ class templateParser
         global $app_strings, $sugar_config, $app_list_strings;
         $repl_arr = array();
         $isValidator = new SuiteValidator();
-        $nullVal = "&ndash;";
+        $nullVal = "<span>&ndash;</span>";
 
+        /* HACK DMARG 2019-12-21
+         * Look for related Experiences
+         */
+        
+        if ( $key == "pat_perspectivepatient" ) {
+          $html = preg_match('/EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE.+?(?=<table)(.+?(?=<\/table)<\/table>)/', $string, $match);
+          if ( $match ) {
+            $expTblTemplHtml = $match[1];
+            preg_match_all('/\$[a-zA-Z_]+/', $expTblTemplHtml, $varMatches);
+            $db = DBManagerFactory::getInstance();
+            $sql = "SELECT pe.* FROM `pat_perspectivepatient_pat_experiencepatientpartenaire_c` p1
+                    JOIN pat_experiencepatientpartenaire pe ON p1.pat_perspe53b3patient_ida = '" . $focus->id .
+                    "' AND p1.pat_perspe7214tenaire_idb = pe.id";
+            $result = $db->query($sql);
+            $expTblsHtml = [];
+            while ( $row = $db->fetchByAssoc($result) ) {
+              $freshTblHtml = $expTblTemplHtml;
+              foreach ( $varMatches[0] as $var ) {
+                $varName = substr($var, 1);
+                $regex = "/\\\$${varName}/";
+                $repl = $nullVal;
+                if ( isset($row[$varName]) ) {
+                  $repl = trim($row[$varName]);
+                  if ( $varName == "role_experience" ) {
+                    $repl = $app_list_strings['role_pp_list'][$repl];
+                  }
+                }
+                $freshTblHtml = preg_replace($regex,  $repl, $freshTblHtml, 1);
+              }
+              $expTblsHtml[] = $freshTblHtml;
+            }
+            $divTag = "<div style='border: 1px solid black; margin-left: 20px; margin-bottom: 10px'>";
+            $replHtml = !empty($expTblsHtml) ? $divTag  . implode("</div>$divTag", $expTblsHtml) . "</div>" : "<br>";
+            $string = str_replace($expTblTemplHtml, $replHtml, $string);
+          }
+        }
+        
         foreach ($focus->field_defs as $field_def) {
             if (isset($field_def['name']) && $field_def['name'] != '') {
                 $fieldName = $field_def['name'];
@@ -125,34 +162,6 @@ class templateParser
             }
         } // end foreach()
 
-        /* HACK DMARG 2019-12-21
-         * Look for related Experiences
-         */
-        
-        $html = preg_match('/EXPÉRIENCE PARTENARIAT.+?(?=<table)(.+?(?=<\/table)<\/table>)/', $string, $match);
-        if ( $match ) {
-          $expTblTemplHtml = $match[1];
-          preg_match_all('/\$[a-zA-Z_]+/', $expTblTemplHtml, $varMatches);
-          $db = DBManagerFactory::getInstance();
-          $sql = "SELECT pe.* FROM `pat_perspectivepatient_pat_experiencepatientpartenaire_c` p1
-                  JOIN pat_experiencepatientpartenaire pe ON p1.pat_perspe53b3patient_ida = '" . $focus->id .
-                  "' AND p1.pat_perspe7214tenaire_idb = pe.id";
-          $result = $db->query($sql);
-          $expTblsHtml = [];
-          while ( $row = $db->fetchByAssoc($result) ) {
-            $freshTblHtml = $expTblTemplHtml;
-            foreach ( $varMatches[0] as $var ) {
-              $varName = substr($var, 1);
-              $regex = "/\\\$${varName}/";
-              $freshTblHtml = preg_replace($regex, isset($row[$varName]) ? trim($row[$varName]) : $nullVal, $freshTblHtml, 1);
-            }
-            $expTblsHtml[] = $freshTblHtml;
-          }
-          $replHtml = !empty($expTblsHtml) ? implode("<br>", $expTblsHtml) : "<br>";
-          $string = str_replace($expTblTemplHtml, $replHtml, $string);
-        }
-        
-        
         krsort($repl_arr);
         reset($repl_arr);
 
@@ -197,7 +206,7 @@ class templateParser
                 $string = str_replace("\$$name", '&nbsp;', $string);
             }
         }
-
+        
         return $string;
     }
 }
