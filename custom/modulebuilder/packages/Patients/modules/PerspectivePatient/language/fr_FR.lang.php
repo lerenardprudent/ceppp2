@@ -128,5 +128,5 @@ $mod_strings = array (
   'LBL_EDITVIEW_PANEL4' => 'Expérience maladie - Proche aidant',
   'LBL_EDITVIEW_PANEL5' => 'Expérience partenariat',
   'LBL_EDITVIEW_PANEL7' => 'Implication',
-  'LBL_PRINT_AS_PDF' => 'Imprimer en tant que document PDF',
+  'LBL_PRINT_AS_PDF' => 'Imprimer en tant que PDF',
 );
