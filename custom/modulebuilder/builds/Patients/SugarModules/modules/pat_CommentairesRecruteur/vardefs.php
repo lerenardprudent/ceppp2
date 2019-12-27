@@ -38,6 +38,8 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
+$foo = 1;
+
 $dictionary['pat_CommentairesRecruteur'] = array(
     'table' => 'pat_commentairesrecruteur',
     'audited' => true,
@@ -76,4 +78,4 @@ $dictionary['pat_CommentairesRecruteur'] = array(
 if (!class_exists('VardefManager')) {
         require_once('include/SugarObjects/VardefManager.php');
 }
-VardefManager::createVardef('pat_CommentairesRecruteur', 'pat_CommentairesRecruteur', array('basic','assignable','security_groups'));
+VardefManager::createVardef('pat_CommentairesRecruteur', 'pat_CommentairesRecruteur', array('basic','assignable','security_groups'));

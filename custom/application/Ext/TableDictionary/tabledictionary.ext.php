@@ -41,4 +41,9 @@ include('custom/metadata/pat_patients_pat_perspectivepatientMetaData.php');
 include('custom/metadata/pat_perspectivepatient_pat_experiencepatientpartenaireMetaData.php');
 
 
+ 
+ //WARNING: The contents of this file are auto-generated
+include('custom/metadata/pat_perspectivepatient_pat_formationMetaData.php');
+
+
 ?>

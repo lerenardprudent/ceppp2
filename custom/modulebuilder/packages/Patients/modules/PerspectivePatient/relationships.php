@@ -54,4 +54,20 @@ $relationships = array (
     'from_studio' => false,
     'relationship_name' => 'pat_perspectivepatient_pat_experiencepatientpartenaire',
   ),
+  'pat_perspectivepatient_pat_formation' => 
+  array (
+    'rhs_label' => 'Formation(s)',
+    'lhs_label' => 'Patient Perspective',
+    'rhs_subpanel' => 'default',
+    'lhs_module' => 'pat_PerspectivePatient',
+    'rhs_module' => 'pat_Formation',
+    'relationship_type' => 'one-to-many',
+    'readonly' => false,
+    'deleted' => false,
+    'relationship_only' => false,
+    'for_activities' => false,
+    'is_custom' => false,
+    'from_studio' => false,
+    'relationship_name' => 'pat_perspectivepatient_pat_formation',
+  ),
 );

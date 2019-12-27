@@ -51,7 +51,7 @@ class templateParser
 
     public function parse_template_bean($string, $key, &$focus)
     {
-        global $app_strings, $sugar_config, $app_list_strings;
+        global $app_strings, $sugar_config, $app_list_strings, $dictionary;
         $repl_arr = array();
         $isValidator = new SuiteValidator();
         $nullVal = "<span>&ndash;</span>";
@@ -60,36 +60,48 @@ class templateParser
          * Look for related Experiences
          */
         
+        $relatedEntries = [
+          "EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE" => "pat_experiencepatientpartenaire",
+          "FORMATION\(S\)" => "pat_formation"
+        ];
+        
         if ( $key == "pat_perspectivepatient" ) {
-          $html = preg_match('/EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE.+?(?=<table)(.+?(?=<\/table)<\/table>)/', $string, $match);
-          if ( $match ) {
-            $expTblTemplHtml = $match[1];
-            preg_match_all('/\$[a-zA-Z_]+/', $expTblTemplHtml, $varMatches);
-            $db = DBManagerFactory::getInstance();
-            $sql = "SELECT pe.* FROM `pat_perspectivepatient_pat_experiencepatientpartenaire_c` p1
-                    JOIN pat_experiencepatientpartenaire pe ON p1.pat_perspe53b3patient_ida = '" . $focus->id .
-                    "' AND p1.pat_perspe7214tenaire_idb = pe.id";
-            $result = $db->query($sql);
-            $expTblsHtml = [];
-            while ( $row = $db->fetchByAssoc($result) ) {
-              $freshTblHtml = $expTblTemplHtml;
-              foreach ( $varMatches[0] as $var ) {
-                $varName = substr($var, 1);
-                $regex = "/\\\$${varName}/";
-                $repl = $nullVal;
-                if ( isset($row[$varName]) ) {
-                  $repl = trim($row[$varName]);
-                  if ( $varName == "role_experience" ) {
-                    $repl = $app_list_strings['role_pp_list'][$repl];
+          foreach ( $relatedEntries as $templateHeading => $relatedTable ) {
+            $rel_idx = "${key}_$relatedTable";
+            $relationship = $dictionary[$rel_idx]['relationships'][$rel_idx];
+            
+            $regexpVarTableHtml = '/' . $templateHeading . '.+?(?=<table)(.+?(?=<\/table)<\/table>)/';
+            //$html = preg_match('/EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE.+?(?=<table)(.+?(?=<\/table)<\/table>)/', $string, $match);
+            $html = preg_match($regexpVarTableHtml, $string, $match);
+            if ( $match ) {
+              $expTblTemplHtml = $match[1];
+              preg_match_all('/\$[a-zA-Z_]+/', $expTblTemplHtml, $varMatches);
+              $db = DBManagerFactory::getInstance();
+              $sql = "SELECT related.* FROM `pat_perspectivepatient_${relatedTable}_c` p1
+                      JOIN $relatedTable related ON p1.${relationship['join_key_lhs']} = '" . $focus->id .
+                      "' AND p1.${relationship['join_key_rhs']} = related.id";
+              $result = $db->query($sql);
+              $expTblsHtml = [];
+              while ( $row = $db->fetchByAssoc($result) ) {
+                $freshTblHtml = $expTblTemplHtml;
+                foreach ( $varMatches[0] as $var ) {
+                  $varName = substr($var, 1);
+                  $regex = "/\\\$${varName}/";
+                  $repl = $nullVal;
+                  if ( isset($row[$varName]) ) {
+                    $repl = trim($row[$varName]);
+                    if ( $varName == "role_experience" ) {
+                      $repl = $app_list_strings['role_pp_list'][$repl];
+                    }
                   }
+                  $freshTblHtml = preg_replace($regex,  $repl, $freshTblHtml, 1);
                 }
-                $freshTblHtml = preg_replace($regex,  $repl, $freshTblHtml, 1);
+                $expTblsHtml[] = $freshTblHtml;
               }
-              $expTblsHtml[] = $freshTblHtml;
+              $divTag = "<div style='border: 1px solid black; margin-left: 20px; margin-bottom: 10px'>";
+              $replHtml = !empty($expTblsHtml) ? $divTag  . implode("</div>$divTag", $expTblsHtml) . "</div>" : "<br>";
+              $string = str_replace($expTblTemplHtml, $replHtml, $string);
             }
-            $divTag = "<div style='border: 1px solid black; margin-left: 20px; margin-bottom: 10px'>";
-            $replHtml = !empty($expTblsHtml) ? $divTag  . implode("</div>$divTag", $expTblsHtml) . "</div>" : "<br>";
-            $string = str_replace($expTblTemplHtml, $replHtml, $string);
           }
         }
         
