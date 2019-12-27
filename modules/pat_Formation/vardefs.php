@@ -38,8 +38,6 @@
  * display the words "Powered by SugarCRM" and "Supercharged by SuiteCRM".
  */
 
-$foo = 1;
-
 $dictionary['pat_Formation'] = array(
     'table' => 'pat_formation',
     'audited' => true,
@@ -146,4 +144,4 @@ $dictionary['pat_Formation'] = array(
 if (!class_exists('VardefManager')) {
         require_once('include/SugarObjects/VardefManager.php');
 }
-VardefManager::createVardef('pat_Formation', 'pat_Formation', array('basic','assignable','security_groups'));
+VardefManager::createVardef('pat_Formation', 'pat_Formation', array('basic','assignable','security_groups'));

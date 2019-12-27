@@ -311,14 +311,6 @@ array (
             'label' => 'LBL_PREFERENCES_AUTRE',
           ),
         ),
-        5 => 
-        array (
-          0 => 
-          array (
-            'name' => 'duree_experience',
-            'label' => 'LBL_DUREE_EXPERIENCE',
-          ),
-        ),
       ),
     ),
   ),

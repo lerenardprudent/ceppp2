@@ -2,7 +2,7 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2019-12-27 16:52:30
+// created: 2019-12-27 18:18:55
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepatient"] = array (
   'name' => 'pat_patients_pat_perspectivepatient',
   'type' => 'link',
@@ -41,7 +41,7 @@ $dictionary["pat_PerspectivePatient"]["fields"]["pat_patients_pat_perspectivepat
 );
 
 
-// created: 2019-12-27 16:52:32
+// created: 2019-12-27 18:18:58
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_perspectivepatient_pat_experiencepatientpartenaire"] = array (
   'name' => 'pat_perspectivepatient_pat_experiencepatientpartenaire',
   'type' => 'link',
@@ -54,7 +54,7 @@ $dictionary["pat_PerspectivePatient"]["fields"]["pat_perspectivepatient_pat_expe
 );
 
 
-// created: 2019-12-27 16:52:32
+// created: 2019-12-27 18:18:59
 $dictionary["pat_PerspectivePatient"]["fields"]["pat_perspectivepatient_pat_formation"] = array (
   'name' => 'pat_perspectivepatient_pat_formation',
   'type' => 'link',

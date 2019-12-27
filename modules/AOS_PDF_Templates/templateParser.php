@@ -61,12 +61,15 @@ class templateParser
          */
         
         $relatedEntries = [
-          "EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE" => "pat_experiencepatientpartenaire",
-          "FORMATION\(S\)" => "pat_formation"
+          "EXPÉRIENCE\(S\) D\'IMPLICATION À TITRE DE PATIENT PARTENAIRE" => "pat_ExperiencePatientPartenaire",
+          "FORMATION\(S\)" => "pat_Formation"
         ];
         
         if ( $key == "pat_perspectivepatient" ) {
-          foreach ( $relatedEntries as $templateHeading => $relatedTable ) {
+          foreach ( $relatedEntries as $templateHeading => $relatedTbl ) {
+            $vardefPath = "modules/$relatedTbl/vardefs.php";
+            $incl = include $vardefPath;
+            $relatedTable = strtolower($relatedTbl);
             $rel_idx = "${key}_$relatedTable";
             $relationship = $dictionary[$rel_idx]['relationships'][$rel_idx];
             
@@ -86,12 +89,14 @@ class templateParser
                 $freshTblHtml = $expTblTemplHtml;
                 foreach ( $varMatches[0] as $var ) {
                   $varName = substr($var, 1);
+                  $varDef = $dictionary[$relatedTbl]['fields'][$varName];
                   $regex = "/\\\$${varName}/";
                   $repl = $nullVal;
                   if ( isset($row[$varName]) ) {
                     $repl = trim($row[$varName]);
-                    if ( $varName == "role_experience" ) {
-                      $repl = $app_list_strings['role_pp_list'][$repl];
+                    if ( isset($varDef['options']) && isset($app_list_strings[$varDef['options']]) ) {
+                      $options = $app_list_strings[$varDef['options']];
+                      $repl = $options[$repl];
                     }
                   }
                   $freshTblHtml = preg_replace($regex,  $repl, $freshTblHtml, 1);

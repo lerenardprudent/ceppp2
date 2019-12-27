@@ -2,7 +2,7 @@
  //WARNING: The contents of this file are auto-generated
 
 
-// created: 2019-12-27 16:52:31
+// created: 2019-12-27 18:18:56
 $dictionary["pat_CommentairesRecruteur"]["fields"]["pat_patients_pat_commentairesrecruteur"] = array (
   'name' => 'pat_patients_pat_commentairesrecruteur',
   'type' => 'link',
